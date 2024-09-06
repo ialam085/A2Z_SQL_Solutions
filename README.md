@@ -1,0 +1,1 @@
+# SQL_Server_Practice_All_Queries
