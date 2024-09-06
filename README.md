@@ -1,1 +1,1 @@
-# SQL_Server_Practice_All_Queries
+## 🔳 SQL Practice All Important Basic Queries ${\color{blue}(using\ SQL SERVER)}$
