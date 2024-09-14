@@ -15,6 +15,8 @@
 - Creating two Tables `Student` and `Exams`
 - Applying all categories of SQL Commands
 
+   - **SCL**: Manages the Database Session.
+     
    - **DDL**: Defines database structures.
  
    - **DML**: Manipulates data.
@@ -27,10 +29,14 @@
 
 ## ◻️ Categories of applied SQL Commands
 ```diff
+- SCL (Session Control Language): SCL is used to select a specific database to work with in a session.
+
++ USE
+
 - DDL (Data Definition Language): DDL changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database.
 
 + CREATE
-+ ALTER
++ ALTER (Rename)
 + DROP
 + TRUNCATE
 
@@ -68,7 +74,8 @@
 
 # 📗 DDL
 
-## 🔘 CREATE 
+## 🔘 CREATE
+   - **Creates a new `Database`, `Table`, `Constraints`, `View`, `Index`**
 ```diff
 + It is used to Create a new Table and Create a new Database
 ```
