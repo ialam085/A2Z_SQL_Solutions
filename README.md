@@ -251,7 +251,6 @@
 ```diff
 + It is used to Modify existing data/values within a table.
 ```
-- **The `UPDATE` command changes data in the table.**
 - **The `WHERE` clause ensures that only the specified row (e.g., Adm_No = 'ROSE00023') is updated.**
 - **Without `WHERE`, all rows in the table would be updated!**
   
@@ -302,3 +301,43 @@
                WHEN Adm_No='ROSE00040' THEN 350
            ELSE 199                                       -- for ELSE statement when we keep any value (i.e. "199") different from SET statement, then Rest columns take the default value "199"
         END;
+
+
+## 🔘 ${\color{blue}DELETE}$
+```diff
++ It is used to Remove data from a table.
+```
+- **WHERE clause specifies which rows to delete (e.g., rows with Adm_No = 'ROSE00023').**
+- **If you omit the WHERE clause, all rows in the table will be deleted!**
+
+### 🔹 Delete single Row/Record from a Table `Student` by the reference of one `Primary-Key` Value
+      DELETE FROM STUDENT
+      WHERE Adm_No = 'ROSE00023';                         -- One Primary-Key Value
+
+### 🔹 Delete Multiple Rows/Records from a Table `Student` by the reference of many `Primary-Key` Values
+- **The `IN` operator allows you to match multiple values in a column.**
+- **This query will delete `Both rows` where Adm_No is either 'ROSE00023' or 'ROSE00024'.**
+  
+      DELETE FROM STUDENT
+      WHERE Adm_No IN ('ROSE00023', 'ROSE00024');         -- Multiple Primary-Key Values by using "IN" operator
+
+### 🔹 Delete Multiple Rows/Records from a Table `Student` by the reference of one `Non-Key` Value
+      DELETE FROM STUDENT
+      WHERE Class = 10;                                   -- One Non-Key Value
+
+
+
+# 📗 DQL (_Data Query Language_)
+
+## 🔘 ${\color{blue}SELEC T}$
+```diff
++ It is used to Retrieve/Fetch data from one or more tables.
+```
+  
+### 🔸 Select All Columns from a Table 'Student'
+      SELECT * FROM STUDENT;
+
+### 🔸 Select All Columns from a Table 'Exams'
+      SELECT * FROM EXAMS;
+
+      
