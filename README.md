@@ -34,7 +34,7 @@
 
 - DDL (Data Definition Language): DDL changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database.
 
-+ CREATE
++ CREATE [Define DATA TYPES here]
 + ALTER (Rename)
 + DROP
 + TRUNCATE
@@ -46,12 +46,15 @@
 - DML (Data Manipulation Language): DML commands are used to modify the database. The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback.
 
 + INSERT
-+ UPDATE
++ UPDATE [mostly OPERATORS used here]
 + DELETE
 
-- DQL (Data Query Language): DQL is used to fetch the data from the database. It uses only one command.
+- DQL (Data Query Language): DQL is used to fetch the data from the database.
 
 + SELECT
++ AGGREGATE functions [SUM(), COUNT(), AVG(), MIN(), MAX()]
++ CLAUSES [where, group by, having, order by, limit]
++ JOINS [(inner) join, left join, right join, outer join, self join, cross join]
 
 - DCL (Data Control Language): DCL commands are used to Grant and Revoke (take back) authority from any database user.
 
