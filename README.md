@@ -88,7 +88,7 @@
 
 # 📗 DDL (_Data Definition Language_)
 
-## 🔘 CREATE
+## 🔘 ${\color{blue}CREATE}$
 ```diff
 + It is used to Create new Databases, Tables, Constraints, Views, Indexes.
 ```
@@ -151,7 +151,7 @@
 - **With an Index (_Right side_)**: SQL Server `jumps directly to the rows` you're looking for (**fast**).
 
 
-## 🔘 ALTER 
+## 🔘 ${\color{blue}ALTER}$
 ```diff
 + It is used to Alter (change) the structure of the Table and the name of the Database.
 ```
@@ -186,7 +186,7 @@
       ADD CONSTRAINT DF_Fee DEFAULT 300 FOR Fee;
 
 
-## 🔘 DROP
+## 🔘 ${\color{blue}DROP}$
 ```diff
 + It is used to Delete/Remove the objects from the Database completely.
 ```
@@ -200,7 +200,7 @@
       DROP INDEX idx_StudName ON STUDENT;
 
 
-## 🔘 TRUNCATE
+## 🔘 ${\color{blue}TRUNCATE}$
 ```diff
 + It is used to Remove/Delete all records (rows) from a table, but the table structure (Column names/headings) remains.
 ```
@@ -210,7 +210,7 @@
 
 # 📗 SCL (_Session Control Language_)
 
-## 🔘 USE
+## 🔘 ${\color{blue}USE}$
 ```diff
 + It is used to select a specific Database to work with in a session.
 ```
@@ -220,11 +220,19 @@
 
 # 📗 DML (_Data Manipulation Language_)
 
-## 🔘 INSERT
+## 🔘 ${\color{blue}INSERT}$
 ```diff
 + It is used to Add new data/values into a table.
 ```
-### 🔸 Insert Data/Values into Table `Student`
+- **'Column names' `must match the order` of the values.**
+- **'Dates' should be provided in `YYYY-MM-DD` format.**
+- **The 'Adm_No' is the `primary key` and must be `unique` for each row.**
+  
+### 🔹 Insert Data/Values (_single record_) into a Table `Student`
+      INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
+      VALUES ('ROSE00023', '2021-10-01', 'Abu Talha', 'M', 'Md Fareed', 'Khiripaghar', '7903077297', 10, 400);
+
+### 🔹 Insert Data/Values (_Multiple records_) into a Table `Student`
       INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
       VALUES 
       ('ROSE00023', '2021-10-01', 'Abu Talha', 'M', 'Md Fareed', 'Khiripaghar', '7903077297', 10, 400),
@@ -239,6 +247,58 @@
       ('ROSE00331', '2023-02-03', 'Juveria Khatoon', 'F', 'Saud Alam', 'Chihar', '7330859950', 8, 300);
 
 
+## 🔘 ${\color{blue}UPDATE}$
+```diff
++ It is used to Modify existing data/values within a table.
+```
+- **The `UPDATE` command changes data in the table.**
+- **The `WHERE` clause ensures that only the specified row (e.g., Adm_No = 'ROSE00023') is updated.**
+- **Without `WHERE`, all rows in the table would be updated!**
+  
+### 🔸 Update (SET) `Single value/row` (_Class_) in a Table 'Student'
+     UPDATE STUDENT
+     SET Class = 9
+     WHERE Adm_No = 'ROSE00040';
 
+### 🔸 Update (SET) `Multiple (same) values/same Column` (_Gender_) in a Table 'Student' if Column has NULL values
+     UPDATE STUDENT
+     SET Gender = 'M'
+     Where Gender IS NULL;
 
-      
+### 🔸 Update (SET) `Multiple (different) values/same row` (_Stud_Name, Fee and DOJ_) in a Table 'Student'
+     UPDATE STUDENT
+     SET Stud_Name = 'Abu Talha Khan', Fee = 450, DOJ = '2021-10-04'
+     WHERE Adm_No = 'ROSE00023';
+
+### 🔸 Update (SET) `Multiple (same) values/same Column` (_Gender_) in a Table 'Student'
+     UPDATE STUDENT
+     SET Gender = 'Fem'
+     WHERE Adm_No IN ('ROSE00145', 'ROSE00331', 'ROSE00041');
+
+### 🔸 Update (SET with CASE, ELSE, END) `Multiple (different) values/different Column` (_FEE_) in a Table 'Student'
+- **for `ELSE` statement when we keep the same column name (i.e. "Fee") as `SET` statement, then Rest columns `value remain same`**
+
+        UPDATE STUDENT
+           SET Fee = CASE
+               WHEN Adm_No='ROSE00024' THEN 450
+               WHEN Adm_No='ROSE00041' THEN 275
+               WHEN Adm_No='ROSE00058' THEN 325
+               WHEN Adm_No='ROSE00102' THEN 250
+               WHEN Adm_No='ROSE00023' THEN 400
+               WHEN Adm_No='ROSE00040' THEN 350
+           ELSE Fee                                       -- for ELSE statement when we keep the same column name (i.e. "Fee") as SET statement, then Rest columns value remain same
+        END;
+
+### 🔸 Update (SET with CASE, ELSE, END) `Multiple (different) values/different Column` (_FEE_) in a Table 'Student'
+- **for `ELSE` statement when we keep any value (i.e. "199") different from `SET` statement, then Rest columns take the `default value "199"`**
+
+        UPDATE STUDENT
+           SET Fee = CASE
+               WHEN Adm_No='ROSE00024' THEN 450
+               WHEN Adm_No='ROSE00041' THEN 275
+               WHEN Adm_No='ROSE00058' THEN 325
+               WHEN Adm_No='ROSE00102' THEN 250
+               WHEN Adm_No='ROSE00023' THEN 400
+               WHEN Adm_No='ROSE00040' THEN 350
+           ELSE 199                                       -- for ELSE statement when we keep any value (i.e. "199") different from SET statement, then Rest columns take the default value "199"
+        END;
