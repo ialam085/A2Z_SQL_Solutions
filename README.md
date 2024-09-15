@@ -1,9 +1,9 @@
 # 🔳 Practice All Important Basic SQL Queries ${\color{green}(using\ SQL\ SERVER)}$
 
-## 👇 ${\color{blue}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired\ SQL\ commands}$
+## 👇 ${\color{blue}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired}$ ${\color{red}SQL\ commands}$
 
-| DDL            | SCL            | DML            | DQL            | DCL            | TCL            |
-|----------------|----------------|----------------|----------------|----------------|----------------|
+| 🔹 DDL           | 🔸 SCL         | 🔹 DML         | 🔸 DQL         | 🔹 DCL         | 🔸 TCL         |
+|------------------|----------------|----------------|----------------|----------------|----------------|
 | [CREATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluecreate) | [USE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueuse) | [INSERT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueinsert) | [SELECT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueselec-t) | [GRANT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluegrant) | [COMMIT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluecommit) |
 | [ALTER](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluealter) | | [UPDATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueupdate) | [WILDCARDS](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluewildcards) | [REVOKE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluerevoke) | [ROLLBACK](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluerollback) |
 | [DROP](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluedrop) | | [DELETE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluedelete) | [AGGREGATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueaggregate-functions) | | [SAVEPOINT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluesavepoint) |
