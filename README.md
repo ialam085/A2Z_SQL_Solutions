@@ -606,6 +606,120 @@
       OUTER JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values)
 
+### 🔸 Fetch Student Records using `SELF JOIN`
+- **`SELF JOIN`: A self join is when a table is joined with itself. It is useful for hierarchical or recursive data structures. Let's say we want to find students from the same address (students who live in the same location).**
+
+      SELECT S1.Stud_Name AS Student1, S2.Stud_Name AS Student2, S1.Addres
+      FROM STUDENT S1
+      INNER JOIN STUDENT S2
+      ON S1.Addres = S2.Addres
+      WHERE S1.Adm_No <> S2.Adm_No;    -- This query matches students who live at the same address but ensures they are not the same student by using S1.Adm_No <> S2.Adm_No
+  
+### 🔸 Fetch Student Records using `CROSS JOIN`
+- **`CROSS JOIN`: It combines every row of the first table with every row of the second table. `Example`: Cross join students with their subjects.**
+
+      SELECT S.Stud_Name, E.Subject_Name
+      FROM STUDENT S
+      CROSS JOIN EXAMS E;              -- Pairs every student with every subject, producing a large set of combinations
+
+### 🔸 Fetch Student Records using `UNION`
+- **`UNION`: It Combines the results of two or more SELECT statements. The UNION operator only returns distinct records.**
+
+      SELECT Adm_No FROM STUDENT
+      UNION
+      SELECT Guardian_Name FROM STUDENT;
 
 
+# 📗 DCL (_Data Control Language_)
 
+## 🔘 ${\color{blue}GRANT}$
+```diff
++ It is used to give a user access rights to the database.
+```
+  
+### 🔹 Grant `SELECT` Permission on a Table
+      GRANT SELECT ON STUDENT TO UserA;                      -- Gives the user 'UserA' the ability to perform SELECT queries on the STUDENT table
+
+### 🔹 Grant `INSERT` and `UPDATE` Permissions on a Table
+      GRANT INSERT, UPDATE ON STUDENT TO UserA;              -- Allows UserA to insert new records and update existing ones in the STUDENT table
+
+## 🔘 ${\color{blue}REVOKE}$
+```diff
++ It is used to remove access rights from the database which is granted to a user.
+```
+
+### 🔸 Revoke `SELECT` Permission on a Table
+      REVOKE SELECT ON STUDENT TO UserA;                      -- Removes the SELECT permission, so UserA can no longer query data from the STUDENT table
+
+### 🔸 Revoke `INSERT` and `UPDATE` Permissions on a Table
+      REVOKE INSERT, UPDATE ON STUDENT TO UserA;              -- Removes the ability for UserA to insert new records or update existing ones in the STUDENT table
+
+
+# 📗 TCL (_Transaction Control Language_)
+
+## 🔘 ${\color{blue}COMMIT}$
+```diff
++ It is used to save the current transaction permanently in the database. Once a COMMIT is executed, the changes are made permanent and cannot be rolled back.
+```
+  
+### 🔹 Insert a Record and `Commit` the Transaction
+      
+      BEGIN TRANSACTION;
+
+      INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
+      VALUES ('ROSE00332', '2023-09-15', 'John Doe', 'M', 'Richard Doe', 'Greenfield', '1234567890', 8, 350);
+
+      COMMIT;
+
+## 🔘 ${\color{blue}ROLLBACK}$
+```diff
++ It is used to Undo changes made in the current transaction.
+```
+  
+### 🔸 Insert a Record, but `Rollback` the Transaction
+      
+      BEGIN TRANSACTION;
+
+      INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
+      VALUES ('ROSE00333', '2023-09-15', 'Jane Smith', 'F', 'John Smith', 'Blueville', '9876543210', 7, 300);
+
+      ROLLBACK;                                                                      -- If something goes wrong, rollback the transaction
+
+
+## 🔘 ${\color{blue}SAVEPOINT}$
+```diff
++ It is used to set a point within a transaction to which you can roll back later.
+```
+  
+### 🔹 Using `SAVEPOINT` in a Transaction
+      
+      BEGIN TRANSACTION;
+
+      INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
+      VALUES ('ROSE00334', '2023-09-15', 'Alice Brown', 'F', 'Sam Brown', 'Redtown', '1122334455', 6, 250);
+
+      SAVEPOINT Save1;
+
+      INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
+      VALUES ('ROSE00335', '2023-09-15', 'Bob White', 'M', 'Jim White', 'Greenville', '5566778899', 5, 275);
+
+      ROLLBACK TRANSACTION Save1;                                                  -- Something goes wrong, rollback to the savepoint
+
+      COMMIT;                                                                      -- Now commit the first insert, but not the second
+
+## 🔘 ${\color{blue}SET\ TRANSACTION}$
+```diff
++ It is used to specify characteristics for the transaction (e.g., isolation level).
+```
+  
+### 🔸 Using `SET TRANSACTION ISOLATION LEVEL`
+      
+      SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+      BEGIN TRANSACTION;
+                                                                                           -- Query or Insert/Update/Delete operations                                                      
+
+      INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
+      VALUES ('ROSE00336', '2023-09-15', 'Charlie Green', 'M', 'Paul Green', 'Bluefield', '9988776655', 9, 400);
+
+      COMMIT;
