@@ -548,12 +548,64 @@
        SELECT DISTINCT Class FROM STUDENT
        WHERE Fee > 300;                                      -- Retrieve the distinct classes of students where student fee more than 300
 
+### 🔹 Select Records using `JOIN`
+- **`JOIN` clause: Combines rows from two or more tables.**
+
+       SELECT S.*, E.Subject_Name, E.Marks_Obtained          -- Fetch all columns (*) from Student Table and Subject & Marks obtained from Exams Table
+       FROM STUDENT S
+       INNER JOIN EXAMS E
+       ON S.Adm_No = E.Adm_No;
+
 
 ## 🔘 ${\color{blue}JOINS}$
 ```diff
 + It is used to combine rows from two or more tables, based on a related column between them.
 ```
 
-### 🔹 Fetch Students with their Exam Marks using `INNER JOINS`
-- **`WHERE` clause: `Filter rows` based on a condition before grouping.**
+### 🔹 Fetch Students Records using `INNER JOIN`
+- **`(INNER) JOIN`: Returns records that have MATCHING VALUES IN BOTH TABLES.**
+
+      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      INNER JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No;                             -- Returns the student names along with the subjects and marks they obtained in the exams
+--------------------------------------------------------------
+      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      INNER JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No
+      WHERE S.Class = 10;                                 -- Returns the students of class 10 and their respective exam marks
+--------------------------------------------------------------
+      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      INNER JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No
+      WHERE E.Marks_Obtained > 85;                        -- Fetches students who scored more than 85 marks in any exam
+
+### 🔹 Fetch Students Records using `LEFT JOIN`
+- **`LEFT (OUTER) JOIN`: Returns all records from the LEFT TABLE, and the matched records from the RIGHT TABLE.**
+
+      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      LEFT JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No;           -- Fetches all students, including those who may not have appeared in any exams
+
+### 🔹 Fetch Students Records using `RIGHT JOIN`
+- **`RIGHT (OUTER) JOIN`: Returns all records from the RIGHT TABLE, and the matched records from the LEFT TABLE.**
+
+      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      RIGHT JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values for Marks_Obtained)
+
+### 🔹 Fetch Students Records using `OUTER JOIN`
+- **`FULL (OUTER) JOIN`: Returns all records when there is a match in either LEFT or RIGHT TABLE.**
+
+      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      OUTER JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values)
+
+
+
 
