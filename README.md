@@ -426,7 +426,29 @@
       SELECT * FROM STUDENT
       ORDER BY Class DESC;
 
+### 🔸 Select Records using `Aggregate` functions as Alias names (COUNT, SUM, AVG, MIN, MAX)
+      SELECT COUNT(*) AS TotalStudents
+      FROM STUDENT;                          -- Count the total number of records/rows from student table
+--------------------------------------------------------------
+      SELECT SUM(Fee) AS TotalFees
+      FROM STUDENT;                          -- Calculate the total fees of all students from student table
+--------------------------------------------------------------
+      SELECT AVG(Fee) AS AverageFee
+      FROM STUDENT;                          -- Calculate the average fee of students from student table
+--------------------------------------------------------------
+      SELECT MIN(Fee) AS MinimumFee
+      FROM STUDENT;                          -- Find the minimum fee paid by a student from student table
+--------------------------------------------------------------
+      SELECT MAX(Fee) AS MinimumFee
+      FROM STUDENT;                          -- Find the maximum fee paid by a student from student table
+--------------------------------------------------------------
+      SELECT Class, COUNT(*) AS NumberOfStudents
+      FROM STUDENT
+      GROUP BY Class;                        -- Count the number of students in each class (Group By) from student table
 
-
-
+### 🔸 Select Records using `Clauses` (WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP, DISTINCT)
+      SELECT * FROM STUDENT
+      WHERE Class = 10;                      -- Retrieve all students in Class 10
+--------------------------------------------------------------
+      SELECT
 
