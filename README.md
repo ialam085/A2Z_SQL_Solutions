@@ -96,9 +96,11 @@
 + It is used to Create new Databases, Tables, Constraints, Views, Indexes.
 ```
 ### 🔸 Create a new `DATABASE` named 'FSA'
+```sql
       CREATE DATABASE FSA;
-
+```
 ### 🔸 Create a new `TABLE` named 'STUDENT'
+```sql
       CREATE TABLE STUDENT (
       Adm_No VARCHAR(20) PRIMARY KEY,
       DOJ DATE,
@@ -110,10 +112,10 @@
       Class INT,
       Fee DECIMAL(10, 2)
       );
-
+```
 ### 🔸 Create the Table Student with `CONSTRAINTS` (inline)
 - **SQL `CONSTRAINTS` are used to specify `rules` for the data in a table. Constraints are used to `limit` the type of data that can go into a table.**
-
+```sql
       CREATE TABLE STUDENT (
       Adm_No VARCHAR(10) PRIMARY KEY,                    -- Primary key constraint on Admission number
       DOJ DATE NOT NULL,                                 -- Date of Joining, NOT NULL constraint
@@ -125,29 +127,29 @@
       Class INT CHECK (Class BETWEEN 1 AND 12),          -- CHECK constraint ensuring Class is between 1 and 12
       Fee DECIMAL(10, 2) CHECK (Fee > 0)                 -- CHECK constraint ensuring Fee is positive
       );
-
+```
 ### 🔸 Create a `VIEW` named `Class10_Students`
 - **SQL `VIEWS` are simplified data access, minimize the Query. It is also known as `Virtual Table` or `Query Table` because it does not store the rows and columns on the disk. It can lead to performance issues because it is not actual table**
-
+```sql
       CREATE VIEW Class10_Students AS
       SELECT Adm_No, Stud_Name, Gender, Guardian_Name, Contact_Number, Fee
       FROM STUDENT
       WHERE Class = 10;
-
+```
 - **Query to check the `VIEWS` in a Table**
-
+```sql
       SELECT * FROM Class10_Students;
-
+```
 ### 🔸 Create an `INDEX` `idx_StudName`
 - **An Index in SQL is like a table of contents in a book. It helps SQL Server quickly locate and retrieve the data from a table without having to scan the entire table.**
-
+```sql
       CREATE INDEX idx_StudName
       ON STUDENT (Stud_Name);
-
+```
 - **Query to check the `INDEXES` in a Table**
-
+```sql
       EXEC sp_helpindex 'STUDENT';
-
+```
 ![image](https://github.com/user-attachments/assets/7b6a57fc-0b20-4b4e-b912-d84ee18f6013)
 
 - **Without an Index (_Left side_)**: SQL Server `searches the whole table` (**slow**).
@@ -159,57 +161,69 @@
 + It is used to Alter (change) the structure of the Table and the name of the Database.
 ```
 ### 🔹 Alter a `DATABASE` _FSA_ to 'FSA_new'
+```sql 
       ALTER DATABASE FSA
       Modify Name = FSA_new;
-
+```
 ### 🔹 Rename a `Table` _STUDENTS_ to 'STUDENT'
+```sql      
       EXEC sp_rename 'Students', 'Student';
-
+```
 ### 🔹 Rename a Table `Column` _Contact_No_ to 'Contact_Number'
+```sql      
       EXEC sp_rename 'student.Contact_No', 'Contact_Number';
-
+```
 ### 🔹 Add a new `column` 'Email' to table _Student_
+```sql      
       ALTER TABLE STUDENT
       ADD Email VARCHAR(100);
-
+```
 ### 🔹 Modify a `column (change data type)` _BIGINT_ to 'VARCHAR' for `Contact_Number` column
+```sql      
       ALTER TABLE STUDENT
       ALTER COLUMN Contact_Number VARCHAR(20);
-
+```
 ### 🔹 Modify a `column (change length of data type)` _VARCHAR(50)_ to 'VARCHAR(100)' for `Stud_Name` column
+```sql      
       ALTER TABLE STUDENT
       ALTER COLUMN Stud_Name VARCHAR(100);
-
+```
 ### 🔹 Drop a column 'Email' from table _Student_
+```sql      
       ALTER TABLE STUDENT
       DROP COLUMN Email;
-
+```
 ### 🔹 Add a default value of `300` to 'Fee' column
+```sql      
       ALTER TABLE STUDENT
       ADD CONSTRAINT DF_Fee DEFAULT 300 FOR Fee;
-
+```
 
 ## 🔘 ${\color{blue}DROP}$
 ```diff
 + It is used to Delete/Remove the objects from the Database completely.
 ```
 ### 🔸 Drop the `Database` 'FSA'
+```sql      
       DROP DATABASE FSA;
-
+```
 ### 🔸 Drop the `Table` 'Student'
+```sql      
       DROP TABLE STUDENT;
-
+```
 ### 🔸 Drop an `Index` 'idx_StudName'
+```sql      
       DROP INDEX idx_StudName ON STUDENT;
-
+```
 
 ## 🔘 ${\color{blue}TRUNCATE}$
 ```diff
 + It is used to Remove/Delete all records (rows) from a table, but the table structure (Column names/headings) remains.
 ```
 ### 🔹 Truncate the `Table` 'Student'
+```sql      
       TRUNCATE TABLE STUDENT;
-
+```
 
 # 📗 SCL (_Session Control Language_)
 
@@ -218,8 +232,9 @@
 + It is used to select a specific Database to work with in a session.
 ```
 ### 🔸 Using an Existing `DATABASE` named 'FSA'
+```sql      
       USE FSA;
-
+```
 
 # 📗 DML (_Data Manipulation Language_)
 
@@ -232,10 +247,12 @@
 - **The 'Adm_No' is the `primary key` and must be `unique` for each row.**
   
 ### 🔹 Insert Data/Values (_single record_) into a Table `Student`
+```sql      
       INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
       VALUES ('ROSE00023', '2021-10-01', 'Abu Talha', 'M', 'Md Fareed', 'Khiripaghar', '7903077297', 10, 400);
-
+```
 ### 🔹 Insert Data/Values (_Multiple records_) into a Table `Student`
+```sql      
       INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
       VALUES 
       ('ROSE00023', '2021-10-01', 'Abu Talha', 'M', 'Md Fareed', 'Khiripaghar', '7903077297', 10, 400),
@@ -248,7 +265,7 @@
       ('ROSE00145', '2021-12-01', 'Roji Kumari', 'F', 'Ranjit Kumar Sah', 'Chilmil', '6206863026', 7, 300),
       ('ROSE00172', '2021-12-04', 'Md Azfar', 'M', 'Md Mushtaque', 'Maghota', '7631041561', 10, 300),
       ('ROSE00331', '2023-02-03', 'Juveria Khatoon', 'F', 'Saud Alam', 'Chihar', '7330859950', 8, 300);
-
+```
 
 ## 🔘 ${\color{blue}UPDATE}$
 ```diff
@@ -258,28 +275,32 @@
 - **Without `WHERE`, all rows in the table would be updated!**
   
 ### 🔸 Update (SET) `Single value/row` (_Class_) in a Table 'Student'
+```sql     
      UPDATE STUDENT
      SET Class = 9
      WHERE Adm_No = 'ROSE00040';
-
+```
 ### 🔸 Update (SET) `Multiple (same) values/same Column` (_Gender_) in a Table 'Student' if Column has NULL values
+```sql     
      UPDATE STUDENT
      SET Gender = 'M'
      Where Gender IS NULL;
-
+```
 ### 🔸 Update (SET) `Multiple (different) values/same row` (_Stud_Name, Fee and DOJ_) in a Table 'Student'
+```sql     
      UPDATE STUDENT
      SET Stud_Name = 'Abu Talha Khan', Fee = 450, DOJ = '2021-10-04'
      WHERE Adm_No = 'ROSE00023';
-
+```
 ### 🔸 Update (SET) `Multiple (same) values/same Column` (_Gender_) in a Table 'Student'
+```sql     
      UPDATE STUDENT
      SET Gender = 'Fem'
      WHERE Adm_No IN ('ROSE00145', 'ROSE00331', 'ROSE00041');
-
+```
 ### 🔸 Update (SET with CASE, ELSE, END) `Multiple (different) values/different Column` (_FEE_) in a Table 'Student'
 - **for `ELSE` statement when we keep the same column name (i.e. "Fee") as `SET` statement, then Rest columns `value remain same`**
-
+```sql
         UPDATE STUDENT
            SET Fee = CASE
                WHEN Adm_No='ROSE00024' THEN 450
@@ -290,10 +311,10 @@
                WHEN Adm_No='ROSE00040' THEN 350
            ELSE Fee                                       -- for ELSE statement when we keep the same column name (i.e. "Fee") as SET statement, then Rest columns value remain same
         END;
-
+```
 ### 🔸 Update (SET with CASE, ELSE, END) `Multiple (different) values/different Column` (_FEE_) in a Table 'Student'
 - **for `ELSE` statement when we keep any value (i.e. "199") different from `SET` statement, then Rest columns take the `default value "199"`**
-
+```sql
         UPDATE STUDENT
            SET Fee = CASE
                WHEN Adm_No='ROSE00024' THEN 450
@@ -304,7 +325,7 @@
                WHEN Adm_No='ROSE00040' THEN 350
            ELSE 199                                       -- for ELSE statement when we keep any value (i.e. "199") different from SET statement, then Rest columns take the default value "199"
         END;
-
+```
 
 ## 🔘 ${\color{blue}DELETE}$
 ```diff
@@ -314,20 +335,22 @@
 - **If you omit the WHERE clause, all rows in the table will be deleted!**
 
 ### 🔹 Delete single Row/Record from a Table `Student` by the reference of one `Primary-Key` Value
+```sql      
       DELETE FROM STUDENT
       WHERE Adm_No = 'ROSE00023';                         -- One Primary-Key Value
-
+```
 ### 🔹 Delete Multiple Rows/Records from a Table `Student` by the reference of many `Primary-Key` Values
 - **The `IN` operator allows you to match multiple values in a column.**
 - **This query will delete `Both rows` where Adm_No is either 'ROSE00023' or 'ROSE00024'.**
-  
+```sql  
       DELETE FROM STUDENT
       WHERE Adm_No IN ('ROSE00023', 'ROSE00024');         -- Multiple Primary-Key Values by using "IN" operator
-
+```
 ### 🔹 Delete Multiple Rows/Records from a Table `Student` by the reference of one `Non-Key` Value
+```sql      
       DELETE FROM STUDENT
       WHERE Class = 10;                                   -- One Non-Key Value
-
+```
 
 
 # 📗 DQL (_Data Query Language_)
@@ -338,6 +361,7 @@
 ```
   
 ### 🔸 Select Current `Date and Time`
+```sql
       SELECT Getdate() AS [Current Date and Time];             -- To check Current DATE and TIME
 ---------------------------------------------------------------
       SELECT Sysdatetime() AS [Current Date and Time];         -- To check Current DATE and TIME
@@ -345,7 +369,7 @@
       SELECT Cast(Getdate() AS Date) AS [Current Date];        -- To check Current DATE only
 ---------------------------------------------------------------
       SELECT Cast(Sysdatetime() AS Date) AS [Current Date];    -- To check Current DATE only
-
+```
 ### 🔸 Select `All Databases` of SQL-Server
       SELECT * FROM sys.databases;
 
