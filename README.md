@@ -382,7 +382,7 @@
       SELECT * FROM EXAMS
       WHERE Subject_Name IN('Science', 'English', 'Computer') AND Marks_Obtained > 90;    -- Return all records from EXAMS Table who get marks above 90 in Science, English and Computer
 
-### 🔸 Select Records with Conditions using `WILDCARDS` (%, [], [^], _)
+### 🔸 Select Records with Conditions using `WILDCARDS` ( %, [], [^], _ )
       SELECT * FROM STUDENT
       WHERE Guardian_Name LIKE 'M%';        -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'M'
 --------------------------------------------------------------
@@ -419,11 +419,12 @@
       SELECT * FROM STUDENT
       WHERE Addres LIKE '[a-g]%';            -- Return all records from STUDENT Table where Addres starts with any one letter "from 'a' to 'g'" (a,b,c,d,e,f OR g)
 
-### 🔸 Select Records with `Order/Sorting` (ASC or DSC)
+### 🔸 Select Records with `Order/Sorting` (ASC or DESC)
       SELECT * FROM STUDENT
       ORDER BY Stud_Name ASC;
-
-
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      ORDER BY Class DESC;
 
 
 
