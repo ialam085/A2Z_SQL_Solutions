@@ -337,10 +337,37 @@
 + It is used to Retrieve/Fetch data from one or more tables.
 ```
   
-### 🔸 Select All Columns from a Table 'Student'
+### 🔸 Select `All Databases` of SQL-Server
+      SELECT * FROM sys.databases;
+
+### 🔸 Select `All Tables` from a current session Database
+      SELECT * FROM sys.tables;
+
+### 🔸 Select `All Columns` from a Table 'Student'
       SELECT * FROM STUDENT;
 
-### 🔸 Select All Columns from a Table 'Exams'
+### 🔸 Select `All Columns` from a Table 'Exams'
       SELECT * FROM EXAMS;
 
-      
+### 🔸 Select `Specific Columns` from a Table 'Student'
+      SELECT Adm_No, Stud_Name, Class, Fee 
+      FROM EXAMS;
+
+### 🔸 Select Records with a `Condition` (=, >, <, >=, <=, !=, <>)
+      SELECT * FROM STUDENT
+      WHERE Class = 10;
+
+### 🔸 Select Records with Multiple `Condition` (AND, OR, NOT, IN, BETWEEN)
+      SELECT * FROM STUDENT
+      WHERE Fee > 300 AND Class = 8;
+
+### 🔸 Select Records with `Order/Sorting` (ASC or DSC)
+      SELECT * FROM STUDENT
+      ORDER BY Stud_Name ASC;
+
+
+
+
+
+
+
