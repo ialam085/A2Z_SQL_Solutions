@@ -475,12 +475,13 @@
 + It is used to specify conditions or actions to be applied to the data. Clauses help to filter, group, sort, or limit the results of a query.
 ```
 
-### 🔹 Select Records using `Clauses` (WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP, DISTINCT)
+### 🔹 Select Records using `WHERE`
 - **`WHERE` clause: `Filter rows` based on a condition before grouping.**
 
        SELECT * FROM STUDENT
        WHERE Class = 8;                                      -- Retrieve all students in Class 8
 
+### 🔹 Select Records using `ORDER BY`
 - **`ORDER BY` clause: `Sort` the result set.**
 
        SELECT * FROM STUDENT
@@ -490,6 +491,7 @@
        WHERE Gender = 'M'
        ORDER BY Stud_Name ASC;                               -- Retrieve all male students sorted by Stud_Name in ascending order
 
+### 🔹 Select Records using `GROUP BY`
 - **`GROUP BY` clause: `Group rows` based on one or more columns.**
 
        SELECT Class, SUM(Fee) AS [Total Fee by Class]
@@ -502,6 +504,7 @@
        GROUP BY Class
        ORDER BY Class DESC;                                  -- Sum the fee of students in each class whose fee more than 300 sorted by Class in Descending order
 
+### 🔹 Select Records using `HAVING`
 - **`HAVING` clause: `Filter groups` after Grouping to filter results on Aggregation.**
 
        SELECT Class, COUNT(*) AS NumberOfStudents
@@ -515,6 +518,7 @@
        HAVING SUM(Fee) > 500                                 -- Filters groups where the total Fee is greater than 500
        ORDER BY Class DESC;
 
+### 🔹 Select Records using `LIMIT/TOP`
 - **`TOP` clause: `Limit` the number of rows returned.**
 
        SELECT TOP 5 * FROM STUDENT
@@ -523,6 +527,7 @@
        SELECT TOP 5 Adm_No, Stud_Name FROM STUDENT
        ORDER BY Fee DESC;                                    -- Retrieve the top 5 students table Adm_No and Stud_Name columns by Fee in descending order
 
+### 🔹 Select Records using `DISTINCT`
 - **`DISTINCT` clause: Select `unique` values only.**
 
        SELECT DISTINCT Class FROM STUDENT;                   -- Retrieve the distinct classes of students
