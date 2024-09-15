@@ -562,7 +562,7 @@
 + It is used to combine rows from two or more tables, based on a related column between them.
 ```
 
-### 🔹 Fetch Students Records using `INNER JOIN`
+### 🔸 Fetch Student Records using `INNER JOIN`
 - **`(INNER) JOIN`: Returns records that have MATCHING VALUES IN BOTH TABLES.**
 
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
@@ -582,7 +582,7 @@
       ON S.Adm_No = E.Adm_No
       WHERE E.Marks_Obtained > 85;                        -- Fetches students who scored more than 85 marks in any exam
 
-### 🔹 Fetch Students Records using `LEFT JOIN`
+### 🔸 Fetch Student Records using `LEFT JOIN`
 - **`LEFT (OUTER) JOIN`: Returns all records from the LEFT TABLE, and the matched records from the RIGHT TABLE.**
 
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
@@ -590,7 +590,7 @@
       LEFT JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all students, including those who may not have appeared in any exams
 
-### 🔹 Fetch Students Records using `RIGHT JOIN`
+### 🔸 Fetch Student Records using `RIGHT JOIN`
 - **`RIGHT (OUTER) JOIN`: Returns all records from the RIGHT TABLE, and the matched records from the LEFT TABLE.**
 
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
@@ -598,7 +598,7 @@
       RIGHT JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values for Marks_Obtained)
 
-### 🔹 Fetch Students Records using `OUTER JOIN`
+### 🔸 Fetch Student Records using `OUTER JOIN`
 - **`FULL (OUTER) JOIN`: Returns all records when there is a match in either LEFT or RIGHT TABLE.**
 
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
