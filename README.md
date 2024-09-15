@@ -374,61 +374,79 @@
       SELECT Cast(Sysdatetime() AS Date) AS [Current Date];    -- To check Current DATE only
 ```
 ### 🔸 Select `All Databases` of SQL-Server
+```sql      
       SELECT * FROM sys.databases;
-
+```
 ### 🔸 Select `All Tables` from a current session Database
+```sql      
       SELECT * FROM sys.tables;
-
+```
 ### 🔸 Select `All Columns` from a Table 'Student'
+```sql      
       SELECT * FROM STUDENT;
-
+```
 ### 🔸 Select `All Columns` from a Table 'Exams'
+```sql      
       SELECT * FROM EXAMS;
-
+```
 ### 🔸 Select `Specific Columns` from a Table 'Student'
+```sql      
       SELECT Adm_No, Stud_Name, Class, Fee 
       FROM EXAMS;
-
+```
 ### 🔸 Select Records with a `Condition` (`Comparison Operators`: =, >, <, >=, <=, !=, <>)
+```sql      
       SELECT * FROM STUDENT
       WHERE Class = 10;                     -- Return all records from STUDENT Table for 10th Class
----------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Class <> 5;                     -- Return all records from STUDENT Table for all classes EXCEPT 5th Class [Class not equal to (<> or !=) 5]
----------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Fee >= 350;                     -- Return all records from STUDENT Table for those whose Fee more than or equal to 350
-
+```
 ### 🔸 Select Records with `Multiple Conditions` (`Logical Operators`: AND, OR, NOT, IN, BETWEEN, LIKE)
+```sql      
       SELECT * FROM STUDENT
       WHERE Fee > 300 AND Class = 8;        -- Return all records from STUDENT Table for 8th Class whose Fee more than 300
----------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Class = 10 OR Class = 9;         -- Return all records from STUDENT Table for 8th Class whose Fee more than 300
----------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE NOT Fee > 350 AND Gender = 'F';   -- Return all records from STUDENT Table whose fee not more than 350 for Females
----------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE DOJ BETWEEN '2021-10-01' AND '2021-12-04';                 -- Return all records from STUDENT Table who joined between date range
----------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Stud_Name LIKE 'Ru%' OR Stud_Name LIKE '%oon';             -- Used 'WILDCARD %' here
----------------------------------------------------------------
+```
+```sql
       SELECT * FROM EXAMS
       WHERE Subject_Name IN('Science', 'English', 'Computer') AND Marks_Obtained > 90;    -- Return all records from EXAMS Table who get marks above 90 in Science, English and Computer
+```
 
 ### 🔸 Select Records with `NESTED Queries/SUBqueries`
+```sql      
       SELECT * FROM EXAMS
       WHERE Marks_Obtained > (SELECT AVG(Marks_Obtained) FROM EXAMS);        -- Return all records greater than average marks
-
+```
 ### 🔸 Select Records with `Order/Sorting` (ASC or DESC)
+```sql      
       SELECT * FROM STUDENT
       ORDER BY Stud_Name ASC;
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       ORDER BY Class DESC;
-
+```
 
 ## 🔘 ${\color{blue}WILDCARDS}$
 ```diff
@@ -436,47 +454,62 @@
 ```
 
 ### 🔹 Select Records with `Wildcard %`
+```sql      
       SELECT * FROM STUDENT
       WHERE Guardian_Name LIKE 'M%';        -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'M'
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM EXAMS
       WHERE Subject_Name LIKE '%e';         -- Return all records from EXAMS Table where Subject Name ENDS with letter 'e'
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM EXAMS
       WHERE Subject_Name LIKE 'M%s';        -- Return all records from EXAMS Table where Subject name STARTS with letter 'M' and ENDS with letter 's'
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM EXAMS
       WHERE Addres LIKE '%ur%';             -- Return all records from EXAMS Table where Addres CONTAINS phrase 'ur'
+```
 
 ### 🔹 Select Records with `Wildcard _`
+```sql      
       SELECT * FROM STUDENT
       WHERE Addres LIKE '_hilmil';           -- Return all records from STUDENT Table where Addres STARTS with ANY ONE character, FOLLOWED "hilmil"
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM EXAMS
       WHERE Subject_Name LIKE 'Englis_';     -- Return all records from EXAMS Table where subject name STARTS with "Englis", ENDS with ANY ONE character
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM EXAMS                    -- Return all records from EXAMS Table where subject name STARTS with ANY 2 characters....
       WHERE Subject_Name LIKE '__gl___';     -- FOLLOWED by "gl" and ENDS with ANY 3 characters
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM EXAMS                    -- Return all records from EXAMS Table where subject code starts with "S"....
       WHERE Subject_Code LIKE 'S__002';      -- followed by any 2 characters and ends with '002'
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Addres LIKE '_a%';               -- Return all records from STUDENT Table where addres starts with any one character, 'a' at 2nd position
+```
 
 ### 🔹 Select Records with `Wildcard []`
+```sql      
       SELECT * FROM STUDENT
       WHERE Addres LIKE '[a-g]%';            -- Return all records from STUDENT Table where Addres starts with any one letter "from 'a' to 'g'" (a,b,c,d,e,f OR g)
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Stud_Name LIKE 'A[nr]%'          -- Matches names starting with "An" or "Ar"
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Guardian_Name LIKE '[rhs]%';    -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'r' or 'h' or 's'
---------------------------------------------------------------
+```
+```sql
       SELECT * FROM STUDENT
       WHERE Guardian_Name LIKE '[^rhs]%';    -- Return all records from STUDENT Table where Guardian Name NOT STARTS with letter 'r' or 'h' or 's'
-
+```
 
 ## 🔘 ${\color{blue}AGGREGATE\ FUNCTIONS}$
 ```diff
@@ -484,31 +517,37 @@
 ```
 
 ### 🔸 Select Records using `COUNT`
+```sql      
       SELECT COUNT(*) AS TotalStudents
       FROM STUDENT;                          -- Count the total number of records/rows from student table
-
+```
 ### 🔸 Select Records using `SUM`
+```sql      
       SELECT SUM(Fee) AS TotalFees
       FROM STUDENT;                          -- Calculate the total fees of all students from student table
-
+```
 ### 🔸 Select Records using `AVG`
+```sql      
       SELECT AVG(Fee) AS AverageFee
       FROM STUDENT;                          -- Calculate the average fee of students from student table
-
+```
 ### 🔸 Select Records using `MIN`
+```sql      
       SELECT MIN(Fee) AS MinimumFee
       FROM STUDENT;                          -- Find the minimum fee paid by a student from student table
-
+```
 ### 🔸 Select Records using `MAX`
+```sql      
       SELECT MAX(Fee) AS MinimumFee
       FROM STUDENT;                          -- Find the maximum fee paid by a student from student table
-
+```
 ### 🔸 Select Records using `COUNT` with GROUP BY and HAVING clauses
+```sql      
       SELECT Class, COUNT(*) AS NumberOfStudents
       FROM STUDENT
       GROUP BY Class
       HAVING COUNT(*) > 2;                   -- Find classes with more than 2 students
-
+```
 
 ## 🔘 ${\color{blue}CLAUSES}$
 ```diff
@@ -517,72 +556,82 @@
 
 ### 🔹 Select Records using `WHERE`
 - **`WHERE` clause: `Filter rows` based on a condition before grouping.**
-
+```sql
        SELECT * FROM STUDENT
        WHERE Class = 8;                                      -- Retrieve all students in Class 8
-
+```
 ### 🔹 Select Records using `ORDER BY`
 - **`ORDER BY` clause: `Sort` the result set.**
-
+```sql
        SELECT * FROM STUDENT
        ORDER BY Stud_Name ASC;                               -- Retrieve all students sorted by Stud_Name in ascending order
---------------------------------------------------------------
+```
+```sql
        SELECT * FROM STUDENT
        WHERE Gender = 'M'
        ORDER BY Stud_Name ASC;                               -- Retrieve all male students sorted by Stud_Name in ascending order
+```
 
 ### 🔹 Select Records using `GROUP BY`
 - **`GROUP BY` clause: `Group rows` based on one or more columns.**
-
+```sql
        SELECT Class, SUM(Fee) AS [Total Fee by Class]
        FROM STUDENT
        GROUP BY Class;                                       -- Sum the fee of students in each class
---------------------------------------------------------------
+```
+```sql
        SELECT Class, SUM(Fee) AS [Total Fee by Class]
        FROM STUDENT
        WHERE Fee > 300                                       -- Filters rows where Fee is greater than 300
        GROUP BY Class
        ORDER BY Class DESC;                                  -- Sum the fee of students in each class whose fee more than 300 sorted by Class in Descending order
+```
 
 ### 🔹 Select Records using `HAVING`
 - **`HAVING` clause: `Filter groups` after Grouping to filter results on Aggregation.**
-
+```sql
        SELECT Class, COUNT(*) AS NumberOfStudents
        FROM STUDENT
        GROUP BY Class
        HAVING COUNT(*) > 2;                                  -- Find classes with more than 2 students
---------------------------------------------------------------
+```
+```sql
        SELECT Class, SUM(Fee) AS [Total Fee by Class]
        FROM STUDENT
        GROUP BY Class
        HAVING SUM(Fee) > 500                                 -- Filters groups where the total Fee is greater than 500
        ORDER BY Class DESC;
+```
 
 ### 🔹 Select Records using `LIMIT/TOP`
 - **`TOP` clause: `Limit` the number of rows returned.**
-
+```sql
        SELECT TOP 5 * FROM STUDENT
        ORDER BY Fee DESC;                                    -- Retrieve the top 5 students by Fee in descending order
---------------------------------------------------------------
+```
+```sql
        SELECT TOP 5 Adm_No, Stud_Name FROM STUDENT
        ORDER BY Fee DESC;                                    -- Retrieve the top 5 students table Adm_No and Stud_Name columns by Fee in descending order
+```
 
 ### 🔹 Select Records using `DISTINCT`
 - **`DISTINCT` clause: Select `unique` values only.**
-
+```sql
        SELECT DISTINCT Class FROM STUDENT;                   -- Retrieve the distinct classes of students
---------------------------------------------------------------
+```
+```sql
        SELECT DISTINCT Class FROM STUDENT
        WHERE Fee > 300;                                      -- Retrieve the distinct classes of students where student fee more than 300
+```
 
 ### 🔹 Select Records using `JOIN`
 - **`JOIN` clause: Combines rows from two or more tables.**
-
+```sql
        SELECT S.*, E.Subject_Name, E.Marks_Obtained          -- Fetch all columns (*) from Student Table and Subject & Marks obtained from Exams Table
        FROM STUDENT S
        INNER JOIN EXAMS E
        ON S.Adm_No = E.Adm_No;
-
+```
 
 ## 🔘 ${\color{blue}JOINS}$
 ```diff
@@ -591,71 +640,79 @@
 
 ### 🔸 Fetch Student Records using `INNER JOIN`
 - **`(INNER) JOIN`: Returns records that have MATCHING VALUES IN BOTH TABLES.**
-
+```sql
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       INNER JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;                             -- Returns the student names along with the subjects and marks they obtained in the exams
---------------------------------------------------------------
+```
+```sql
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       INNER JOIN EXAMS E
       ON S.Adm_No = E.Adm_No
       WHERE S.Class = 10;                                 -- Returns the students of class 10 and their respective exam marks
---------------------------------------------------------------
+```
+```sql
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       INNER JOIN EXAMS E
       ON S.Adm_No = E.Adm_No
       WHERE E.Marks_Obtained > 85;                        -- Fetches students who scored more than 85 marks in any exam
+```
 
 ### 🔸 Fetch Student Records using `LEFT JOIN`
 - **`LEFT (OUTER) JOIN`: Returns all records from the LEFT TABLE, and the matched records from the RIGHT TABLE.**
-
+```sql
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       LEFT JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all students, including those who may not have appeared in any exams
+```
 
 ### 🔸 Fetch Student Records using `RIGHT JOIN`
 - **`RIGHT (OUTER) JOIN`: Returns all records from the RIGHT TABLE, and the matched records from the LEFT TABLE.**
-
+```sql
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       RIGHT JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values for Marks_Obtained)
+```
 
 ### 🔸 Fetch Student Records using `OUTER JOIN`
 - **`FULL (OUTER) JOIN`: Returns all records when there is a match in either LEFT or RIGHT TABLE.**
-
+```sql
       SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       OUTER JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values)
+```
 
 ### 🔸 Fetch Student Records using `SELF JOIN`
 - **`SELF JOIN`: A self join is when a table is joined with itself. It is useful for hierarchical or recursive data structures. Let's say we want to find students from the same address (students who live in the same location).**
-
+```sql
       SELECT S1.Stud_Name AS Student1, S2.Stud_Name AS Student2, S1.Addres
       FROM STUDENT S1
       INNER JOIN STUDENT S2
       ON S1.Addres = S2.Addres
       WHERE S1.Adm_No <> S2.Adm_No;    -- This query matches students who live at the same address but ensures they are not the same student by using S1.Adm_No <> S2.Adm_No
+```
   
 ### 🔸 Fetch Student Records using `CROSS JOIN`
 - **`CROSS JOIN`: It combines every row of the first table with every row of the second table. `Example`: Cross join students with their subjects.**
-
+```sql
       SELECT S.Stud_Name, E.Subject_Name
       FROM STUDENT S
       CROSS JOIN EXAMS E;              -- Pairs every student with every subject, producing a large set of combinations
+```
 
 ### 🔸 Fetch Student Records using `UNION`
 - **`UNION`: It Combines the results of two or more SELECT statements. The UNION operator only returns distinct records.**
-
+```sql
       SELECT Adm_No FROM STUDENT
       UNION
       SELECT Guardian_Name FROM STUDENT;
-
+```
 
 # 📗 DCL (_Data Control Language_)
 
@@ -665,10 +722,14 @@
 ```
   
 ### 🔹 Grant `SELECT` Permission on a Table
+```sql      
       GRANT SELECT ON STUDENT TO UserA;                      -- Gives the user 'UserA' the ability to perform SELECT queries on the STUDENT table
+```
 
 ### 🔹 Grant `INSERT` and `UPDATE` Permissions on a Table
+```sql      
       GRANT INSERT, UPDATE ON STUDENT TO UserA;              -- Allows UserA to insert new records and update existing ones in the STUDENT table
+```
 
 ## 🔘 ${\color{blue}REVOKE}$
 ```diff
@@ -676,11 +737,14 @@
 ```
 
 ### 🔸 Revoke `SELECT` Permission on a Table
+```sql      
       REVOKE SELECT ON STUDENT TO UserA;                      -- Removes the SELECT permission, so UserA can no longer query data from the STUDENT table
+```
 
 ### 🔸 Revoke `INSERT` and `UPDATE` Permissions on a Table
+```sql      
       REVOKE INSERT, UPDATE ON STUDENT TO UserA;              -- Removes the ability for UserA to insert new records or update existing ones in the STUDENT table
-
+```
 
 # 📗 TCL (_Transaction Control Language_)
 
@@ -690,13 +754,14 @@
 ```
   
 ### 🔹 Insert a Record and `Commit` the Transaction
-      
+```sql      
       BEGIN TRANSACTION;
 
       INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
       VALUES ('ROSE00332', '2023-09-15', 'John Doe', 'M', 'Richard Doe', 'Greenfield', '1234567890', 8, 350);
 
       COMMIT;
+```
 
 ## 🔘 ${\color{blue}ROLLBACK}$
 ```diff
@@ -704,14 +769,14 @@
 ```
   
 ### 🔸 Insert a Record, but `Rollback` the Transaction
-      
+```sql      
       BEGIN TRANSACTION;
 
       INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
       VALUES ('ROSE00333', '2023-09-15', 'Jane Smith', 'F', 'John Smith', 'Blueville', '9876543210', 7, 300);
 
       ROLLBACK;                                                                      -- If something goes wrong, rollback the transaction
-
+```
 
 ## 🔘 ${\color{blue}SAVEPOINT}$
 ```diff
@@ -719,7 +784,7 @@
 ```
   
 ### 🔹 Using `SAVEPOINT` in a Transaction
-      
+```sql      
       BEGIN TRANSACTION;
 
       INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
@@ -733,6 +798,7 @@
       ROLLBACK TRANSACTION Save1;                                                  -- Something goes wrong, rollback to the savepoint
 
       COMMIT;                                                                      -- Now commit the first insert, but not the second
+```
 
 ## 🔘 ${\color{blue}SET\ TRANSACTION}$
 ```diff
@@ -740,7 +806,7 @@
 ```
   
 ### 🔸 Using `SET TRANSACTION ISOLATION LEVEL`
-      
+```sql      
       SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
       BEGIN TRANSACTION;
@@ -750,3 +816,4 @@
       VALUES ('ROSE00336', '2023-09-15', 'Charlie Green', 'M', 'Paul Green', 'Bluefield', '9988776655', 9, 400);
 
       COMMIT;
+```
