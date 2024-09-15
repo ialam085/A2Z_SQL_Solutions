@@ -102,7 +102,7 @@
 
 # 📗 DDL (_Data Definition Language_)
 
-🔗 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-practice-all-important-basic-sql-queries-colorgreenusing-sql-server)
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}CREATE}$
 ```diff
 + It is used to Create new Databases, Tables, Constraints, Views, Indexes.
@@ -168,6 +168,7 @@
 - **With an Index (_Right side_)**: SQL Server `jumps directly to the rows` you're looking for (**fast**).
 
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}ALTER}$
 ```diff
 + It is used to Alter (change) the structure of the Table and the name of the Database.
@@ -211,6 +212,7 @@
       ADD CONSTRAINT DF_Fee DEFAULT 300 FOR Fee;
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}DROP}$
 ```diff
 + It is used to Delete/Remove the objects from the Database completely.
@@ -228,6 +230,7 @@
       DROP INDEX idx_StudName ON STUDENT;
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}TRUNCATE}$
 ```diff
 + It is used to Remove/Delete all records (rows) from a table, but the table structure (Column names/headings) remains.
@@ -239,6 +242,7 @@
 
 # 📗 SCL (_Session Control Language_)
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}USE}$
 ```diff
 + It is used to select a specific Database to work with in a session.
@@ -250,6 +254,7 @@
 
 # 📗 DML (_Data Manipulation Language_)
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}INSERT}$
 ```diff
 + It is used to Add new data/values into a table.
@@ -279,6 +284,7 @@
       ('ROSE00331', '2023-02-03', 'Juveria Khatoon', 'F', 'Saud Alam', 'Chihar', '7330859950', 8, 300);
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}UPDATE}$
 ```diff
 + It is used to Modify existing data/values within a table.
@@ -339,6 +345,7 @@
         END;
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}DELETE}$
 ```diff
 + It is used to Remove data from a table.
@@ -367,6 +374,7 @@
 
 # 📗 DQL (_Data Query Language_)
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}SELEC T}$
 ```diff
 + It is used to Retrieve/Fetch data from one or more tables.
@@ -460,6 +468,7 @@
       ORDER BY Class DESC;
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}WILDCARDS}$
 ```diff
 + It is used to search for patterns with LIKE clause within string data.
@@ -523,6 +532,7 @@
       WHERE Guardian_Name LIKE '[^rhs]%';    -- Return all records from STUDENT Table where Guardian Name NOT STARTS with letter 'r' or 'h' or 's'
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}AGGREGATE\ FUNCTIONS}$
 ```diff
 + It is used to perform a calculation on multiple rows and returns a single value. It is commonly used to summarize or analyze data.
@@ -561,6 +571,7 @@
       HAVING COUNT(*) > 2;                   -- Find classes with more than 2 students
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}CLAUSES}$
 ```diff
 + It is used to specify conditions or actions to be applied to the data. Clauses help to filter, group, sort, or limit the results of a query.
@@ -645,6 +656,7 @@
        ON S.Adm_No = E.Adm_No;
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}JOINS}$
 ```diff
 + It is used to combine rows from two or more tables, based on a related column between them.
@@ -728,6 +740,7 @@
 
 # 📗 DCL (_Data Control Language_)
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}GRANT}$
 ```diff
 + It is used to give a user access rights to the database.
@@ -743,6 +756,7 @@
       GRANT INSERT, UPDATE ON STUDENT TO UserA;              -- Allows UserA to insert new records and update existing ones in the STUDENT table
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}REVOKE}$
 ```diff
 + It is used to remove access rights from the database which is granted to a user.
@@ -760,6 +774,7 @@
 
 # 📗 TCL (_Transaction Control Language_)
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}COMMIT}$
 ```diff
 + It is used to save the current transaction permanently in the database. Once a COMMIT is executed, the changes are made permanent and cannot be rolled back.
@@ -775,6 +790,7 @@
       COMMIT;
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}ROLLBACK}$
 ```diff
 + It is used to Undo changes made in the current transaction.
@@ -790,6 +806,7 @@
       ROLLBACK;                                                                      -- If something goes wrong, rollback the transaction
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}SAVEPOINT}$
 ```diff
 + It is used to set a point within a transaction to which you can roll back later.
@@ -812,6 +829,7 @@
       COMMIT;                                                                      -- Now commit the first insert, but not the second
 ```
 
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ## 🔘 ${\color{blue}SET\ TRANSACTION}$
 ```diff
 + It is used to specify characteristics for the transaction (e.g., isolation level).
