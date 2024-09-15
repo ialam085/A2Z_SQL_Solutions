@@ -363,7 +363,7 @@
       SELECT * FROM STUDENT
       WHERE Fee >= 350;                     -- Return all records from STUDENT Table for those whose Fee more than or equal to 350
 
-### 🔸 Select Records with `Multiple Condition` (`Logical Operators`: AND, OR, NOT, IN, BETWEEN, LIKE)
+### 🔸 Select Records with `Multiple Conditions` (`Logical Operators`: AND, OR, NOT, IN, BETWEEN, LIKE)
       SELECT * FROM STUDENT
       WHERE Fee > 300 AND Class = 8;        -- Return all records from STUDENT Table for 8th Class whose Fee more than 300
 ---------------------------------------------------------------
@@ -381,6 +381,10 @@
 ---------------------------------------------------------------
       SELECT * FROM EXAMS
       WHERE Subject_Name IN('Science', 'English', 'Computer') AND Marks_Obtained > 90;    -- Return all records from EXAMS Table who get marks above 90 in Science, English and Computer
+
+### 🔸 Select Records with `NESTED Queries/SUBqueries`
+      SELECT * FROM EXAMS
+      WHERE Marks_Obtained > (SELECT AVG(Marks_Obtained) FROM EXAMS);        -- Return all records greater than average marks
 
 ### 🔸 Select Records with `Order/Sorting` (ASC or DESC)
       SELECT * FROM STUDENT
@@ -536,4 +540,11 @@
        WHERE Fee > 300;                                      -- Retrieve the distinct classes of students where student fee more than 300
 
 
+## 🔘 ${\color{blue}JOINS}$
+```diff
++ It is used to combine rows from two or more tables, based on a related column between them.
+```
+
+### 🔹 INNER JOIN: Fetch Students with their Exam Marks
+- **`WHERE` clause: `Filter rows` based on a condition before grouping.**
 
