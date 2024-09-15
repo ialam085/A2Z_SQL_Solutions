@@ -337,6 +337,15 @@
 + It is used to Retrieve/Fetch data from one or more tables.
 ```
   
+### 🔸 Select Current `Date and Time`
+      Select Getdate() as [Current Date and Time];             -- To check Current DATE and TIME
+---------------------------------------------------------------
+      Select Sysdatetime() as [Current Date and Time];         -- To check Current DATE and TIME
+---------------------------------------------------------------
+      Select Cast(Getdate() as Date) as [Current Date];        -- To check Current DATE only
+---------------------------------------------------------------
+      Select Cast(Sysdatetime() as Date) as [Current Date];    -- To check Current DATE only
+
 ### 🔸 Select `All Databases` of SQL-Server
       SELECT * FROM sys.databases;
 
@@ -545,6 +554,6 @@
 + It is used to combine rows from two or more tables, based on a related column between them.
 ```
 
-### 🔹 INNER JOIN: Fetch Students with their Exam Marks
+### 🔹 Fetch Students with their Exam Marks using `INNER JOINS`
 - **`WHERE` clause: `Filter rows` based on a condition before grouping.**
 
