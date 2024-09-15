@@ -129,6 +129,7 @@
 
 # 📗 DDL (_Data Definition Language_)
 
+🔗 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-practice-all-important-basic-sql-queries-colorgreenusing-sql-server)
 ## 🔘 ${\color{blue}CREATE}$
 ```diff
 + It is used to Create new Databases, Tables, Constraints, Views, Indexes.
