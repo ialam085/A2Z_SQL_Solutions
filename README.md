@@ -33,8 +33,6 @@
 👉  [SET TRANSACTION](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueset-transaction)
 
 
-
-
 ## ◻️ Objective
 
 - The objective of the SQL report is to understand all the **Basic SQL-Server Queries** as well as all kind of **String Functions**.
