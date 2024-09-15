@@ -363,11 +363,14 @@
 ### 🔸 Select Current `Date and Time`
 ```sql
       SELECT Getdate() AS [Current Date and Time];             -- To check Current DATE and TIME
----------------------------------------------------------------
+```
+```sql
       SELECT Sysdatetime() AS [Current Date and Time];         -- To check Current DATE and TIME
----------------------------------------------------------------
+```
+```sql      
       SELECT Cast(Getdate() AS Date) AS [Current Date];        -- To check Current DATE only
----------------------------------------------------------------
+```
+```sql      
       SELECT Cast(Sysdatetime() AS Date) AS [Current Date];    -- To check Current DATE only
 ```
 ### 🔸 Select `All Databases` of SQL-Server
