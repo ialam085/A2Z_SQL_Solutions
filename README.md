@@ -338,13 +338,13 @@
 ```
   
 ### 🔸 Select Current `Date and Time`
-      Select Getdate() as [Current Date and Time];             -- To check Current DATE and TIME
+      SELECT Getdate() AS [Current Date and Time];             -- To check Current DATE and TIME
 ---------------------------------------------------------------
-      Select Sysdatetime() as [Current Date and Time];         -- To check Current DATE and TIME
+      SELECT Sysdatetime() AS [Current Date and Time];         -- To check Current DATE and TIME
 ---------------------------------------------------------------
-      Select Cast(Getdate() as Date) as [Current Date];        -- To check Current DATE only
+      SELECT Cast(Getdate() AS Date) AS [Current Date];        -- To check Current DATE only
 ---------------------------------------------------------------
-      Select Cast(Sysdatetime() as Date) as [Current Date];    -- To check Current DATE only
+      SELECT Cast(Sysdatetime() AS Date) AS [Current Date];    -- To check Current DATE only
 
 ### 🔸 Select `All Databases` of SQL-Server
       SELECT * FROM sys.databases;
