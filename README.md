@@ -3,33 +3,33 @@
 # ${\color{red}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired\ SQL\ commands}$
 ## ⤵️ DDL
 👉 [CREATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluecreate) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-👉 [ALTER](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluealter) &nbsp;&nbsp;&nbsp;&nbsp;
-👉 [DROP](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluedrop) &nbsp;&nbsp;&nbsp;&nbsp;
+👉 [ALTER](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluealter) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+👉 [DROP](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluedrop) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 👉 [TRUNCATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluetruncate)
 
 ## ⤵️ SCL
 👉  [USE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueuse)
 
 ## ⤵️ DML
-👉  [INSERT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueinsert)
-👉  [UPDATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueupdate)
+👉  [INSERT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueinsert) &nbsp;&nbsp;&nbsp;&nbsp;
+👉  [UPDATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueupdate) &nbsp;&nbsp;&nbsp;&nbsp;
 👉  [DELETE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluedelete)
 
 ## ⤵️ DQL
-👉  [SELECT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueselec-t)
-👉  [WILDCARDS](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluewildcards)
-👉  [AGGREGATE FUNCTIONS](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueaggregate-functions)
-👉  [CLAUSES](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclauses)
+👉  [SELECT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueselec-t) &nbsp;&nbsp;&nbsp;&nbsp;
+👉  [WILDCARDS](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluewildcards) &nbsp;&nbsp;&nbsp;&nbsp;
+👉  [AGGREGATE FUNCTIONS](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueaggregate-functions) &nbsp;&nbsp;&nbsp;&nbsp;
+👉  [CLAUSES](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclauses) &nbsp;&nbsp;&nbsp;&nbsp;
 👉  [JOINS](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluejoins)
 
 ## ⤵️ DCL
-👉  [GRANT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluegrant)
+👉  [GRANT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluegrant) &nbsp;&nbsp;&nbsp;&nbsp;
 👉  [REVOKE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluerevoke)
 
 ## ⤵️ TCL
-👉  [COMMIT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluecommit)
-👉  [ROLLBACK](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluerollback)
-👉  [SAVEPOINT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluesavepoint)
+👉  [COMMIT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluecommit) &nbsp;&nbsp;&nbsp;&nbsp;
+👉  [ROLLBACK](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluerollback) &nbsp;&nbsp;&nbsp;&nbsp;
+👉  [SAVEPOINT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluesavepoint) &nbsp;&nbsp;&nbsp;&nbsp;
 👉  [SET TRANSACTION](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueset-transaction)
 
 
