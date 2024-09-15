@@ -382,7 +382,20 @@
       SELECT * FROM EXAMS
       WHERE Subject_Name IN('Science', 'English', 'Computer') AND Marks_Obtained > 90;    -- Return all records from EXAMS Table who get marks above 90 in Science, English and Computer
 
-### 🔸 Select Records with Conditions using `WILDCARDS` ( %, [], [^], _ )
+### 🔸 Select Records with `Order/Sorting` (ASC or DESC)
+      SELECT * FROM STUDENT
+      ORDER BY Stud_Name ASC;
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      ORDER BY Class DESC;
+
+
+## 🔘 ${\color{blue}WILDCARDS}$
+```diff
++ It is used to search for patterns with LIKE clause within string data.
+```
+
+### 🔹 Select Records with `Wildcard %`
       SELECT * FROM STUDENT
       WHERE Guardian_Name LIKE 'M%';        -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'M'
 --------------------------------------------------------------
@@ -394,13 +407,8 @@
 --------------------------------------------------------------
       SELECT * FROM EXAMS
       WHERE Addres LIKE '%ur%';             -- Return all records from EXAMS Table where Addres CONTAINS phrase 'ur'
---------------------------------------------------------------
-      SELECT * FROM STUDENT
-      WHERE Guardian_Name LIKE '[rhs]%';    -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'r' or 'h' or 's'
---------------------------------------------------------------
-      SELECT * FROM STUDENT
-      WHERE Guardian_Name LIKE '[^rhs]%';    -- Return all records from STUDENT Table where Guardian Name NOT STARTS with letter 'r' or 'h' or 's'
---------------------------------------------------------------
+
+### 🔹 Select Records with `Wildcard _`
       SELECT * FROM STUDENT
       WHERE Addres LIKE '_hilmil';           -- Return all records from STUDENT Table where Addres STARTS with ANY ONE character, FOLLOWED "hilmil"
 --------------------------------------------------------------
@@ -415,40 +423,112 @@
 --------------------------------------------------------------
       SELECT * FROM STUDENT
       WHERE Addres LIKE '_a%';               -- Return all records from STUDENT Table where addres starts with any one character, 'a' at 2nd position
---------------------------------------------------------------
+
+### 🔹 Select Records with `Wildcard []`
       SELECT * FROM STUDENT
       WHERE Addres LIKE '[a-g]%';            -- Return all records from STUDENT Table where Addres starts with any one letter "from 'a' to 'g'" (a,b,c,d,e,f OR g)
-
-### 🔸 Select Records with `Order/Sorting` (ASC or DESC)
-      SELECT * FROM STUDENT
-      ORDER BY Stud_Name ASC;
 --------------------------------------------------------------
       SELECT * FROM STUDENT
-      ORDER BY Class DESC;
+      WHERE Stud_Name LIKE 'A[nr]%'          -- Matches names starting with "An" or "Ar"
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Guardian_Name LIKE '[rhs]%';    -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'r' or 'h' or 's'
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Guardian_Name LIKE '[^rhs]%';    -- Return all records from STUDENT Table where Guardian Name NOT STARTS with letter 'r' or 'h' or 's'
 
-### 🔸 Select Records using `Aggregate` functions as Alias names (COUNT, SUM, AVG, MIN, MAX)
+
+## 🔘 ${\color{blue}AGGREGATE\ FUNCTIONS}$
+```diff
++ It is used to perform a calculation on multiple rows and returns a single value. It is commonly used to summarize or analyze data.
+```
+
+### 🔸 Select Records using `COUNT`
       SELECT COUNT(*) AS TotalStudents
       FROM STUDENT;                          -- Count the total number of records/rows from student table
---------------------------------------------------------------
+
+### 🔸 Select Records using `SUM`
       SELECT SUM(Fee) AS TotalFees
       FROM STUDENT;                          -- Calculate the total fees of all students from student table
---------------------------------------------------------------
+
+### 🔸 Select Records using `AVG`
       SELECT AVG(Fee) AS AverageFee
       FROM STUDENT;                          -- Calculate the average fee of students from student table
---------------------------------------------------------------
+
+### 🔸 Select Records using `MIN`
       SELECT MIN(Fee) AS MinimumFee
       FROM STUDENT;                          -- Find the minimum fee paid by a student from student table
---------------------------------------------------------------
+
+### 🔸 Select Records using `MAX`
       SELECT MAX(Fee) AS MinimumFee
       FROM STUDENT;                          -- Find the maximum fee paid by a student from student table
---------------------------------------------------------------
+
+### 🔸 Select Records using `COUNT` with GROUP BY and HAVING clauses
       SELECT Class, COUNT(*) AS NumberOfStudents
       FROM STUDENT
-      GROUP BY Class;                        -- Count the number of students in each class (Group By) from student table
+      GROUP BY Class
+      HAVING COUNT(*) > 2;                   -- Find classes with more than 2 students
 
-### 🔸 Select Records using `Clauses` (WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP, DISTINCT)
-      SELECT * FROM STUDENT
-      WHERE Class = 10;                      -- Retrieve all students in Class 10
+
+## 🔘 ${\color{blue}CLAUSES}$
+```diff
++ It is used to specify conditions or actions to be applied to the data. Clauses help to filter, group, sort, or limit the results of a query.
+```
+
+### 🔹 Select Records using `Clauses` (WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP, DISTINCT)
+- **`WHERE` clause: `Filter rows` based on a condition before grouping.**
+
+       SELECT * FROM STUDENT
+       WHERE Class = 8;                                      -- Retrieve all students in Class 8
+
+- **`ORDER BY` clause: `Sort` the result set.**
+
+       SELECT * FROM STUDENT
+       ORDER BY Stud_Name ASC;                               -- Retrieve all students sorted by Stud_Name in ascending order
 --------------------------------------------------------------
-      SELECT
+       SELECT * FROM STUDENT
+       WHERE Gender = 'M'
+       ORDER BY Stud_Name ASC;                               -- Retrieve all male students sorted by Stud_Name in ascending order
+
+- **`GROUP BY` clause: `Group rows` based on one or more columns.**
+
+       SELECT Class, SUM(Fee) AS [Total Fee by Class]
+       FROM STUDENT
+       GROUP BY Class;                                       -- Sum the fee of students in each class
+--------------------------------------------------------------
+       SELECT Class, SUM(Fee) AS [Total Fee by Class]
+       FROM STUDENT
+       WHERE Fee > 300                                       -- Filters rows where Fee is greater than 300
+       GROUP BY Class
+       ORDER BY Class DESC;                                  -- Sum the fee of students in each class whose fee more than 300 sorted by Class in Descending order
+
+- **`HAVING` clause: `Filter groups` after Grouping to filter results on Aggregation.**
+
+       SELECT Class, COUNT(*) AS NumberOfStudents
+       FROM STUDENT
+       GROUP BY Class
+       HAVING COUNT(*) > 2;                                  -- Find classes with more than 2 students
+--------------------------------------------------------------
+       SELECT Class, SUM(Fee) AS [Total Fee by Class]
+       FROM STUDENT
+       GROUP BY Class
+       HAVING SUM(Fee) > 500                                 -- Filters groups where the total Fee is greater than 500
+       ORDER BY Class DESC;
+
+- **`TOP` clause: `Limit` the number of rows returned.**
+
+       SELECT TOP 5 * FROM STUDENT
+       ORDER BY Fee DESC;                                    -- Retrieve the top 5 students by Fee in descending order
+--------------------------------------------------------------
+       SELECT TOP 5 Adm_No, Stud_Name FROM STUDENT
+       ORDER BY Fee DESC;                                    -- Retrieve the top 5 students table Adm_No and Stud_Name columns by Fee in descending order
+
+- **`DISTINCT` clause: Select `unique` values only.**
+
+       SELECT DISTINCT Class FROM STUDENT;                   -- Retrieve the distinct classes of students
+--------------------------------------------------------------
+       SELECT DISTINCT Class FROM STUDENT
+       WHERE Fee > 300;                                      -- Retrieve the distinct classes of students where student fee more than 300
+
+
 
