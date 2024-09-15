@@ -353,13 +353,71 @@
       SELECT Adm_No, Stud_Name, Class, Fee 
       FROM EXAMS;
 
-### 🔸 Select Records with a `Condition` (=, >, <, >=, <=, !=, <>)
+### 🔸 Select Records with a `Condition` (`Comparison Operators`: =, >, <, >=, <=, !=, <>)
       SELECT * FROM STUDENT
-      WHERE Class = 10;
+      WHERE Class = 10;                     -- Return all records from STUDENT Table for 10th Class
+---------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Class <> 5;                     -- Return all records from STUDENT Table for all classes EXCEPT 5th Class [Class not equal to (<> or !=) 5]
+---------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Fee >= 350;                     -- Return all records from STUDENT Table for those whose Fee more than or equal to 350
 
-### 🔸 Select Records with Multiple `Condition` (AND, OR, NOT, IN, BETWEEN)
+### 🔸 Select Records with `Multiple Condition` (`Logical Operators`: AND, OR, NOT, IN, BETWEEN, LIKE)
       SELECT * FROM STUDENT
-      WHERE Fee > 300 AND Class = 8;
+      WHERE Fee > 300 AND Class = 8;        -- Return all records from STUDENT Table for 8th Class whose Fee more than 300
+---------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Class = 10 OR Class = 9;         -- Return all records from STUDENT Table for 8th Class whose Fee more than 300
+---------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE NOT Fee > 350 AND Gender = 'F';   -- Return all records from STUDENT Table whose fee not more than 350 for Females
+---------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE DOJ BETWEEN '2021-10-01' AND '2021-12-04';                 -- Return all records from STUDENT Table who joined between date range
+---------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Stud_Name LIKE 'Ru%' OR Stud_Name LIKE '%oon';             -- Used 'WILDCARD %' here
+---------------------------------------------------------------
+      SELECT * FROM EXAMS
+      WHERE Subject_Name IN('Science', 'English', 'Computer') AND Marks_Obtained > 90;    -- Return all records from EXAMS Table who get marks above 90 in Science, English and Computer
+
+### 🔸 Select Records with Conditions using `WILDCARDS` (%, [], [^], _)
+      SELECT * FROM STUDENT
+      WHERE Guardian_Name LIKE 'M%';        -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'M'
+--------------------------------------------------------------
+      SELECT * FROM EXAMS
+      WHERE Subject_Name LIKE '%e';         -- Return all records from EXAMS Table where Subject Name ENDS with letter 'e'
+--------------------------------------------------------------
+      SELECT * FROM EXAMS
+      WHERE Subject_Name LIKE 'M%s';        -- Return all records from EXAMS Table where Subject name STARTS with letter 'M' and ENDS with letter 's'
+--------------------------------------------------------------
+      SELECT * FROM EXAMS
+      WHERE Addres LIKE '%ur%';             -- Return all records from EXAMS Table where Addres CONTAINS phrase 'ur'
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Guardian_Name LIKE '[rhs]%';    -- Return all records from STUDENT Table where Guardian Name STARTS with letter 'r' or 'h' or 's'
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Guardian_Name LIKE '[^rhs]%';    -- Return all records from STUDENT Table where Guardian Name NOT STARTS with letter 'r' or 'h' or 's'
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Addres LIKE '_hilmil';           -- Return all records from STUDENT Table where Addres STARTS with ANY ONE character, FOLLOWED "hilmil"
+--------------------------------------------------------------
+      SELECT * FROM EXAMS
+      WHERE Subject_Name LIKE 'Englis_';     -- Return all records from EXAMS Table where subject name STARTS with "Englis", ENDS with ANY ONE character
+--------------------------------------------------------------
+      SELECT * FROM EXAMS                    -- Return all records from EXAMS Table where subject name STARTS with ANY 2 characters....
+      WHERE Subject_Name LIKE '__gl___';     -- FOLLOWED by "gl" and ENDS with ANY 3 characters
+--------------------------------------------------------------
+      SELECT * FROM EXAMS                    -- Return all records from EXAMS Table where subject code starts with "S"....
+      WHERE Subject_Code LIKE 'S__002';      -- followed by any 2 characters and ends with '002'
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Addres LIKE '_a%';               -- Return all records from STUDENT Table where addres starts with any one character, 'a' at 2nd position
+--------------------------------------------------------------
+      SELECT * FROM STUDENT
+      WHERE Addres LIKE '[a-g]%';            -- Return all records from STUDENT Table where Addres starts with any one letter "from 'a' to 'g'" (a,b,c,d,e,f OR g)
 
 ### 🔸 Select Records with `Order/Sorting` (ASC or DSC)
       SELECT * FROM STUDENT
