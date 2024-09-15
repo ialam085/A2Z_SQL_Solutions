@@ -2,7 +2,7 @@
 
 # ${\color{red}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired\ SQL\ commands}$
 ## ⤵️ DDL
-👉 [CREATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluecreate) &nbsp;&nbsp;&nbsp;&nbsp;
+👉 [CREATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluecreate) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 👉 [ALTER](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluealter) &nbsp;&nbsp;&nbsp;&nbsp;
 👉 [DROP](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluedrop) &nbsp;&nbsp;&nbsp;&nbsp;
 👉 [TRUNCATE](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluetruncate)
