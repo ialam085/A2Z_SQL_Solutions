@@ -874,14 +874,182 @@
 + It is used to extract a portion of a string.
 ```
   
-### 🔹 Extract `first 3 characters` of Stud_Name
+### 🔸 Extract `first 3 characters` of Stud_Name
 ```sql      
       SELECT SUBSTRING(Stud_Name, 1, 3) AS ShortName
       FROM STUDENT;
 ```
 
-### 🔹 Extract `4 characters` from Adm_No starting at `position 5`
+### 🔸 Extract `4 characters` from Adm_No starting at `position 5`
 ```sql      
       SELECT SUBSTRING(Adm_No, 5, 4) AS PartAdmNo
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}CHAR_LENGTH}$
+```diff
++ It is used to show the number of characters in a string.
+```
+  
+### 🔹 Find the length of `Stud_Name` (LEN)
+```sql      
+      SELECT Stud_Name, LEN(Stud_Name) AS NameLength
+      FROM STUDENT;
+```
+
+### 🔹 Find the length of `Address` (LEN)
+```sql      
+      SELECT Address, LEN(Address) AS AddressLength
+      FROM STUDENT;
+```
+
+### 🔹 Find the position of `Md` in Stud_Name (CHARINDEX)
+```sql      
+      SELECT CHARINDEX('Md', Stud_Name) AS Md_Position
+      FROM STUDENT;
+```
+
+### 🔹 Find the `starting position` of pattern `R` in Stud_Name (PATINDEX)
+```sql      
+      SELECT PATINDEX('%R%', Stud_Name) AS R_Position
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}LETTER_CASE}$
+```diff
++ It is used to convert strings to uppercase or lowercase.
+```
+  
+### 🔸 Convert Stud_Name to `UPPERCASE`
+```sql      
+      SELECT UPPER(Stud_Name) AS UpperCaseName
+      FROM STUDENT;
+```
+
+### 🔸 Convert Address to `lowercase`
+```sql      
+      SELECT LOWER(Address) AS LowerCaseAddress
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}TRIM}$
+```diff
++ It is used to remove leading and trailing spaces from a string.
+```
+  
+### 🔹 Remove `spaces` from Contact_Number
+```sql      
+      SELECT TRIM(Contact_Number) AS TrimmedContact
+      FROM STUDENT;
+```
+
+### 🔹 Remove `leading spaces` from Stud_Name
+```sql      
+      SELECT LTRIM(Stud_Name) AS Trimmed_Left_Name
+      FROM STUDENT;
+```
+
+### 🔹 Remove `trailing spaces` from Stud_Name
+```sql      
+      SELECT RTRIM(Stud_Name) AS Trimmed_Right_Name
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}REPLACE}$
+```diff
++ It is used to replace part of a string with another string.
+```
+  
+### 🔸 Replace 'Md' with 'Mr.' in Stud_Name
+```sql      
+      SELECT REPLACE(Stud_Name, 'Md', 'Mr.') AS Updated_Name
+      FROM STUDENT;
+```
+
+### 🔸 Replace hyphen `-` with `space` in Adm_No
+```sql      
+      SELECT REPLACE(Adm_No, '-', ' ') AS ModifiedAdmNo
+      FROM STUDENT;
+```
+
+### 🔸 Insert `Dr.` at the beginning of Stud_Name
+```sql      
+      SELECT STUFF(Stud_Name, 1, 0, 'Dr. ') AS Stuffed_Name
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}LEFT\ and\ RIGHT}$
+```diff
++ It is used to extract a specified number of characters from the left or right side of a string.
+```
+  
+### 🔹 Extract `first 5` characters of Adm_No
+```sql      
+      SELECT LEFT(Adm_No, 5) AS FirstFive
+      FROM STUDENT;
+```
+
+### 🔹 Extract `last 4` characters of Contact_Number
+```sql      
+      SELECT RIGHT(Contact_Number, 4) AS LastFourDigits
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}REVERSE}$
+```diff
++ It is used to reverse the order of characters in a string.
+```
+  
+### 🔸 Reverse `Adm_No`
+```sql      
+      SELECT REVERSE(Adm_No) AS ReversedAdmNo
+      FROM STUDENT;
+```
+
+### 🔸 Reverse `Stud_Name`
+```sql      
+      SELECT REVERSE(Stud_Name) AS ReversedName
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}REPLICATE}$
+```diff
++ It is used to repeat a string a specified number of times.
+```
+  
+### 🔹 Repeat '*' symbol 5 times
+```sql      
+      SELECT REPLICATE('*', 5) AS Stars
+      FROM STUDENT;
+```
+
+### 🔹 Repeat `Stud_Name` twice
+```sql      
+      SELECT REPLICATE(Stud_Name, 2) AS DoubledName
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}FORMAT}$
+```diff
++ It is used to format a value according to a format.
+```
+  
+### 🔸 Format Contact_Number with `dashes`
+```sql      
+      SELECT FORMAT(Contact_Number, '###-###-####') AS FormattedContact
+      FROM STUDENT;
+```
+
+### 🔸 Format DOJ in `MM/dd/yyyy` format
+```sql      
+      SELECT FORMAT(DOJ, 'MM/dd/yyyy') AS FormattedDOJ
       FROM STUDENT;
 ```
