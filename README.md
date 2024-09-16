@@ -880,7 +880,7 @@
       FROM STUDENT;
 ```
 
-### 🔹 Extract `4 characters from Adm_No` starting at `position 5`
+### 🔹 Extract `4 characters` from Adm_No starting at `position 5`
 ```sql      
       SELECT SUBSTRING(Adm_No, 5, 4) AS PartAdmNo
       FROM STUDENT;
