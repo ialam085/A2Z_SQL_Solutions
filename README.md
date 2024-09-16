@@ -983,7 +983,7 @@
 ```
 
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-## 🔘 ${\color{blue}LEFT\ and\ RIGHT}$
+## 🔘 ${\color{blue}LEFT\/RIGHT}$
 ```diff
 + It is used to extract a specified number of characters from the left or right side of a string.
 ```
