@@ -847,3 +847,41 @@
 
       COMMIT;
 ```
+
+# 📗 SFL (_String Function Language_) - `Conceptual`
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}CONCAT}$
+```diff
++ It is used to combine two or more strings into one.
+```
+  
+### 🔹 Concatenate `Adm_No` and `Stud_Name`
+```sql      
+      SELECT CONCAT(Adm_No, ' - ', Stud_Name) AS StudentDetails
+      FROM STUDENT;
+```
+
+### 🔹 Concatenate `Stud_Name` and `Guardian_Name`
+```sql      
+      SELECT CONCAT('Name: ', Stud_Name, ', Guardian: ', Guardian_Name) AS [Full Details]
+      FROM STUDENT;
+```
+
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+## 🔘 ${\color{blue}SUBSTRING}$
+```diff
++ It is used to extract a portion of a string.
+```
+  
+### 🔹 Extract `first 3 characters` of Stud_Name
+```sql      
+      SELECT SUBSTRING(Stud_Name, 1, 3) AS ShortName
+      FROM STUDENT;
+```
+
+### 🔹 Extract `4 characters from Adm_No` starting at `position 5`
+```sql      
+      SELECT SUBSTRING(Adm_No, 5, 4) AS PartAdmNo
+      FROM STUDENT;
+```
