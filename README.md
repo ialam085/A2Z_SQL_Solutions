@@ -273,7 +273,10 @@ Table: EXAMS
 ```
 ### 🔸 Drop an `Index` 'idx_StudName'
 ```sql      
-      DROP INDEX idx_StudName ON STUDENT;
+      DROP INDEX idx_StudName ON STUDENT;          -- Syntax: Index_Name ON Table_Name
+```
+```sql      
+      Drop Index Student.idx_StudName;             -- Syntax: Table_Name.Index_Name
 ```
 
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
