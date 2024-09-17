@@ -518,7 +518,7 @@ Table: EXAMS
 ```
 ```sql
       SELECT * FROM EXAMS
-      WHERE Marks_Obtained IS NULL;                                     -- Find students whose Marks_Obtained is NULL (if any such values exist)
+      WHERE Marks_Obtained IS NULL;                                     -- Find students whose Marks_Obtained IS NULL (if any such values exist)
 ```
 
 ### 🔸 Select Records with `NESTED Queries/SUBqueries`
@@ -708,11 +708,11 @@ Table: EXAMS
 ### 🔹 Select Records using `DISTINCT`
 - **`DISTINCT` clause: Select `unique` values only.**
 ```sql
-       SELECT DISTINCT Class FROM STUDENT;                   -- Retrieve the distinct classes of students
+       SELECT DISTINCT Class FROM STUDENT;                   -- Retrieve the distinct/unique classes of students
 ```
 ```sql
        SELECT DISTINCT Class FROM STUDENT
-       WHERE Fee > 300;                                      -- Retrieve the distinct classes of students where student fee more than 300
+       WHERE Fee > 300;                                      -- Retrieve the distinct classes/unique of students where student fee more than 300
 ```
 
 ### 🔹 Select Records using `JOIN`
