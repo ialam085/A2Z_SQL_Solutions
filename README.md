@@ -458,6 +458,27 @@ Table: EXAMS
       SELECT Adm_No, Stud_Name, Class, Fee 
       FROM EXAMS;
 ```
+### 🔸 Select Records with a Arithmetic Operators` (+, -, *, /, %)
+```sql      
+      SELECT Stud_Name, Fee, Fee + 50 AS Increased_Fee
+      FROM STUDENT;                                            -- Addition (+): Increase the FEE by 50 for each student
+```
+```sql      
+      SELECT Stud_Name, Fee, Fee - 100 AS Reduced_Fee
+      FROM STUDENT;                                            -- Subtraction (-): Decrease 100 from the Fee for each student
+```
+```sql      
+      SELECT Stud_Name, Fee, Fee * 2 AS Doubled_Fee
+      FROM STUDENT;                                            -- Multiplication (*): Multiply the Fee by 2 for each student
+```
+```sql      
+      SELECT Stud_Name, Fee, Fee / 2 AS Halved_Fee
+      FROM STUDENT;                                            -- Division (/): Divide the Fee by 2 for each student
+```
+```sql      
+      SELECT Stud_Name, Fee, Fee % 100 AS Remainder_Fee
+      FROM STUDENT;                                            -- Modulus (%): Find the remainder when Fee is divided by 100
+```
 ### 🔸 Select Records with a `Condition` (`Comparison Operators`: =, >, <, >=, <=, !=, <>, !<, !>)
 ```sql      
       SELECT * FROM STUDENT
