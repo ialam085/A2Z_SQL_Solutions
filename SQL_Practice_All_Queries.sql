@@ -12,6 +12,7 @@
 | ROSE00145  | 12/1/2021 | Roji Kumari      | F      | Ranjit Kumar Sah| Chilmil     | 6206863026     | 7     | 300 |
 | ROSE00172  | 12/4/2021 | Md Azfar         | M      | Md Mushtaque    | Maghota     | 7631041561     | 10    | 300 |
 | ROSE00331  | 2/3/2023  | Juveria Khatoon  | F      | Saud Alam       | Chihar      | 7330859950     | 8     | 300 |
+| ROSE00335  | 9/4/2023  | Manish Kumar     | M      | Ranjan Kumar    | Barahat     | 9060609777     | 9     | 350 |
 | ROSE00041  | 6/8/2021  | Ruba Parveen     | F      | Md Parwez       | Khiripaghar | 9693461570     | 5     | 275 |
 +------------+-----------+------------------+--------+-----------------+-------------+----------------+-------+-----+
 
