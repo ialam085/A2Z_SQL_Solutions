@@ -757,22 +757,22 @@ Table: EXAMS
 ```
 
 ### 🔸 Fetch Student Records using `INNER JOIN`
-- **`(INNER) JOIN`: Returns records that have MATCHING VALUES IN BOTH TABLES.**
+- **`(INNER) JOIN`: Returns records that have only MATCHING (Common) VALUES IN BOTH TABLES.**
 ```sql
-      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       INNER JOIN EXAMS E
-      ON S.Adm_No = E.Adm_No;                             -- Returns the student names along with the subjects and marks they obtained in the exams
+      ON S.Adm_No = E.Adm_No;                             -- Returns the Admission No., student names along with the subjects and marks they obtained in the exams
 ```
 ```sql
-      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
-      INNER JOIN EXAMS E
+      JOIN EXAMS E                                        -- JOIN or Inner JOIN works similarly
       ON S.Adm_No = E.Adm_No
       WHERE S.Class = 10;                                 -- Returns the students of class 10 and their respective exam marks
 ```
 ```sql
-      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       INNER JOIN EXAMS E
       ON S.Adm_No = E.Adm_No
@@ -782,28 +782,46 @@ Table: EXAMS
 ### 🔸 Fetch Student Records using `LEFT JOIN`
 - **`LEFT (OUTER) JOIN`: Returns all records from the LEFT TABLE, and the matched records from the RIGHT TABLE.**
 ```sql
-      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       LEFT JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all students, including those who may not have appeared in any exams
+```
+```sql
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      LEFT OUTER JOIN EXAMS E           -- LEFT OUTER JOIN acts as similar to LEFT JOIN
+      ON S.Adm_No = E.Adm_No;
 ```
 
 ### 🔸 Fetch Student Records using `RIGHT JOIN`
 - **`RIGHT (OUTER) JOIN`: Returns all records from the RIGHT TABLE, and the matched records from the LEFT TABLE.**
 ```sql
-      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
       RIGHT JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values for Marks_Obtained)
+```
+```sql
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      RIGHT OUTER JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No;           -- RIGHT OUTER JOIN acts as similar to RIGHT JOIN
 ```
 
 ### 🔸 Fetch Student Records using `OUTER JOIN`
 - **`FULL (OUTER) JOIN`: Returns all records when there is a match in either LEFT or RIGHT TABLE.**
 ```sql
-      SELECT S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
       FROM STUDENT S
-      OUTER JOIN EXAMS E
+      FULL OUTER JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           -- Fetches all exam records, even if some students may not exist in the STUDENT table (Null Values)
+```
+```sql
+      SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
+      FROM STUDENT S
+      FULL JOIN EXAMS E
+      ON S.Adm_No = E.Adm_No;           --  FULL JOIN acts as similar to FULL OUTER JOIN
 ```
 
 ### 🔸 Fetch Student Records using `SELF JOIN`
@@ -825,7 +843,7 @@ Table: EXAMS
 ```
 
 ### 🔸 Fetch Student Records using `UNION`
-- **`UNION`: It Combines the results of two or more SELECT statements. The UNION operator only returns distinct records.**
+- **`UNION`: It Combines the results of two or more SELECT statements. The UNION operator only returns distinct records from one or more tables.**
 ```sql
       SELECT Adm_No FROM STUDENT
       UNION
