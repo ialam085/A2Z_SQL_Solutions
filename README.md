@@ -264,6 +264,11 @@ Table: EXAMS
 ```sql      
       DROP TABLE STUDENT;
 ```
+### 🔸 Drop a column 'Email' from table _Student_
+```sql      
+      ALTER TABLE STUDENT
+      DROP COLUMN Email;
+```
 ### 🔸 Drop an `Index` 'idx_StudName'
 ```sql      
       DROP INDEX idx_StudName ON STUDENT;
