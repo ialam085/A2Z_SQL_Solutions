@@ -58,12 +58,12 @@
 - DML (Data Manipulation Language): DML commands are used to modify the database. The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback.
 
 + INSERT
-+ UPDATE [mostly OPERATORS used here]
++ UPDATE
 + DELETE
 
 - DQL (Data Query Language): DQL is used to fetch the data from the database.
 
-+ SELECT
++ SELECT [mostly OPERATORS used here]
 + AGGREGATE functions [SUM(), COUNT(), AVG(), MIN(), MAX()]
 + CLAUSES [where, group by, having, order by, limit]
 + JOINS [(inner) join, left join, right join, outer join, self join, cross join]
@@ -458,7 +458,7 @@ Table: EXAMS
       SELECT Adm_No, Stud_Name, Class, Fee 
       FROM EXAMS;
 ```
-### 🔸 Select Records with a `Condition` (`Comparison Operators`: =, >, <, >=, <=, !=, <>)
+### 🔸 Select Records with a `Condition` (`Comparison Operators`: =, >, <, >=, <=, !=, <>, !<, !>)
 ```sql      
       SELECT * FROM STUDENT
       WHERE Class = 10;                     -- Return all records from STUDENT Table for 10th Class
@@ -471,7 +471,11 @@ Table: EXAMS
       SELECT * FROM STUDENT
       WHERE Fee >= 350;                     -- Return all records from STUDENT Table for those whose Fee more than or equal to 350
 ```
-### 🔸 Select Records with `Multiple Conditions` (`Logical Operators`: AND, OR, NOT, IN, BETWEEN, LIKE)
+```sql
+      SELECT * FROM STUDENT
+      WHERE Fee !> 350;                     -- Return all records from STUDENT Table for those whose Fee not more than 350
+```
+### 🔸 Select Records with Conditions by `Logical Operators`: AND, OR, NOT, IN, BETWEEN, LIKE, ANY/SOME, ALL, IS NULL
 ```sql      
       SELECT * FROM STUDENT
       WHERE Fee > 300 AND Class = 8;        -- Return all records from STUDENT Table for 8th Class whose Fee more than 300
@@ -494,7 +498,27 @@ Table: EXAMS
 ```
 ```sql
       SELECT * FROM EXAMS
-      WHERE Subject_Name IN('Science', 'English', 'Computer') AND Marks_Obtained > 90;    -- Return all records from EXAMS Table who get marks above 90 in Science, English and Computer
+      WHERE Subject_Name IN('Science', 'English', 'Computer') AND Marks_Obtained > 90;    -- Return all records from EXAMS Table who get marks above 90 IN Science, English and Computer
+```
+```sql
+      SELECT * FROM STUDENT
+      WHERE Fee > ANY (SELECT Fee FROM STUDENT WHERE Class = 8);        -- Find students whose Fee is greater than ANY student in Class 8
+```
+```sql
+      SELECT * FROM STUDENT                                              -- ANY=SOME: SOME is functionally equivalent to ANY in SQL
+      WHERE Fee = SOME (SELECT Fee FROM STUDENT WHERE Class = 8);        -- Find students whose Fee is equal to SOME student in Class 8
+```
+```sql
+      SELECT * FROM STUDENT
+      WHERE Fee > ALL (SELECT Fee FROM STUDENT WHERE Class = 8);         -- Find students whose Fee is greater than ALL students in Class 8
+```
+```sql
+      SELECT Stud_Name FROM STUDENT                                      -- Find students whose Fee is greater than ALL students in Class 8
+      WHERE EXISTS (SELECT * FROM STUDENT WHERE Class = 10);             -- If an entry EXISTS, it returns the student's name
+```
+```sql
+      SELECT * FROM EXAMS
+      WHERE Marks_Obtained IS NULL;                                     -- Find students whose Marks_Obtained is NULL (if any such values exist)
 ```
 
 ### 🔸 Select Records with `NESTED Queries/SUBqueries`
