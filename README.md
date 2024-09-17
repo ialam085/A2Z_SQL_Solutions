@@ -168,7 +168,7 @@ Table: EXAMS
 - **SQL `CONSTRAINTS` are used to specify `rules` for the data in a table. Constraints are used to `limit` the type of data that can go into a table.**
 ```sql
       CREATE TABLE STUDENT (
-      Adm_No VARCHAR(10) PRIMARY KEY,                    -- Primary key constraint on Admission number
+      Adm_No VARCHAR(10) PRIMARY KEY,                    -- PRIMARY KEY constraint (takes by default NOT NULL) constraint on Admission number
       DOJ DATE NOT NULL,                                 -- Date of Joining, NOT NULL constraint
       Stud_Name VARCHAR(50) NOT NULL,                    -- Student Name, NOT NULL constraint
       Gender CHAR(1) CHECK (Gender IN ('M', 'F')),       -- CHECK constraint ensuring Gender is either 'M' or 'F'
@@ -177,6 +177,7 @@ Table: EXAMS
       Contact_Number VARCHAR(15),                        -- Contact Number
       Class INT CHECK (Class BETWEEN 1 AND 12),          -- CHECK constraint ensuring Class is between 1 and 12
       Fee DECIMAL(10, 2) CHECK (Fee > 0)                 -- CHECK constraint ensuring Fee is positive
+      Class_Time time(10) DEFAULT '07:05:00' NOT NULL    -- DEFAULT with NOT NULL, 2 constraint, IF USER DOESN'T INSERT ANY VALUE IN Class_Time, WILL AUTOMATICALLY TAKE Default Time '07:05:00'
       );
 ```
 ### 🔸 Create a `VIEW` named `Class10_Students`
