@@ -246,7 +246,7 @@ Table: EXAMS
       ALTER TABLE STUDENT
       DROP COLUMN Email;
 ```
-### 🔹 Add a default value of `300` to 'Fee' column
+### 🔹 Add a default value of `300` to 'Fee' column by adding CONSTRAINT
 ```sql      
       ALTER TABLE STUDENT
       ADD CONSTRAINT DF_Fee DEFAULT 300 FOR Fee;
