@@ -102,7 +102,7 @@ Table: STUDENT
 +------------+-----------+------------------+--------+-----------------+-------------+----------------+-------------+
 | Adm_No     | DOJ       | Stud_Name        | Gender | Guardian_Name   | Address     | Contact_Number | Class | Fee |
 +------------+-----------+------------------+--------+-----------------+-------------+----------------+-------------+
-| ROSE00023  | 10/1/2021 | Abu Talha        | Male   | Md Fareed       | Khiripaghar | 7903077297     | 10    | 400 |
+| ROSE00023  | 10/1/2021 | Abu Talha        | M   | Md Fareed       | Khiripaghar | 7903077297     | 10    | 400 |
 | ROSE00024  | 10/1/2021 | Abu Salesh       | M      | Md Fareed       | Khiripaghar | 7903077297     | 8     | 450 |
 | ROSE00040  | 10/1/2021 | Md Neyamul       | M      | Md Shamsuddin   | Gauripur    | 9661194838     | 7     | 350 |
 | ROSE00041  | 6/8/2021  | Ruba Parveen     | F      | Md Parwez       | Khiripaghar | 9693461570     | 5     | 275 |
