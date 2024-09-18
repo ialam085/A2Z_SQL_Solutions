@@ -13,15 +13,15 @@
 
 
 
-## ◻️ Objective
+# ◻️ Objective
 
 - The objective of the SQL report is to understand all the **Basic SQL-Server Queries** as well as all kind of **String Functions**.
 
-## ◻️ Tech Stack
+# ◻️ Tech Stack
 
 - SQL Server
 
-## ◻️ Steps includes
+# ◻️ Steps includes
 
 - Creating a Database `FSA`
 - Creating two Tables `Student` and `Exams`
@@ -41,7 +41,7 @@
  
    - **SFL**: Manipulate and Transform String Data.
 
-## ◻️ Categories of applied SQL Commands
+# ◻️ Categories of applied SQL Commands
 
 - **DDL** `(Data Definition Language)`: _It changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database._
 
@@ -94,7 +94,7 @@
 
 
 
-## ◻️ Detailed view of all *SQL-Server* Commands with `Queries` and `Examples`
+# ◻️ Detailed view of all *SQL-Server* Commands with `Queries` and `Examples`
 
 ```sql
 Table: STUDENT
