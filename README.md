@@ -63,7 +63,7 @@
 - **DQL** `(Data Query Language)`: _DQL is used to fetch the data from the database._
 
    - SELECT `[mostly OPERATORS used here]`
-   - AGGREGATE functions `[SUM, COUNT, AVG, MIN, MAX]`
+   - AGGREGATES `[SUM, COUNT, AVG, MIN, MAX]`
    - CLAUSES `[WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP]`
    - JOINS `[JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN, CROSS JOIN, UNION, UNION ALL, INTERSECT]`
 
