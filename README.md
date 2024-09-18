@@ -46,7 +46,7 @@
 - **DDL** `(Data Definition Language)`: _It changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database._
 
    - CREATE `[Define DATA TYPES, CONSTRAINTS here]`
-   - ALTER `(Rename)`
+   - ALTER `(Rename/Add/Drop)`
    - DROP
    - TRUNCATE
 
