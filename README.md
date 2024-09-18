@@ -261,7 +261,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}DROP}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Delete/Remove the objects from the Database completely.
++-----------------------------------------------------------------------+
+| It is used to Delete/Remove the objects from the Database completely. |
++-----------------------------------------------------------------------+
 ```
 ### 🔸 Drop the `Database` 'FSA'
 ```sql      
@@ -288,7 +290,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}TRUNCATE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Remove/Delete all records (rows) from a table, but the table structure (Column names/headings) remains.
++-----------------------------------------------------------------------------------------------------------------------+
+| It is used to Remove/Delete all records (rows) from a table, but the table structure (Column names/headings) remains. |
++-----------------------------------------------------------------------------------------------------------------------+
 ```
 ### 🔹 Truncate the `Table` 'Student'
 ```sql      
@@ -301,7 +305,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}USE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to select a specific Database to work with in a session.
++---------------------------------------------------------------------+
+| It is used to select a specific Database to work with in a session. |
++---------------------------------------------------------------------+
 ```
 ### 🔸 Using an Existing `DATABASE` named 'FSA'
 ```sql      
@@ -314,7 +320,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}INSERT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Add new data/values into a table.
++-------------------------------------------------+
+| It is used to Add new data/values into a table. |
++-------------------------------------------------+
 ```
 - **'Column names' `must match the order` of the values.**
 - **'Dates' should be provided in `YYYY-MM-DD` format.**
@@ -345,7 +353,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}UPDATE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Modify existing data/values within a table.
++-----------------------------------------------------------+
+| It is used to Modify existing data/values within a table. |
++-----------------------------------------------------------+
 ```
 - **The `WHERE` clause ensures that only the specified row (e.g., Adm_No = 'ROSE00023') is updated.**
 - **Without `WHERE`, all rows in the table would be updated!**
@@ -407,7 +417,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}DELETE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Remove data from a table.
++-----------------------------------------+
+| It is used to Remove data from a table. |
++-----------------------------------------+
 ```
 - **WHERE clause specifies which rows to delete (e.g., rows with Adm_No = 'ROSE00023').**
 - **If you omit the WHERE clause, all rows in the table will be deleted!**
@@ -437,7 +449,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}SELEC T}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Retrieve/Fetch data from one or more tables.
++------------------------------------------------------------+
+| It is used to Retrieve/Fetch data from one or more tables. |
++------------------------------------------------------------+
 ```
   
 ### 🔸 Select Current `Date and Time`
@@ -577,7 +591,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}WILDCARDS}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to search for patterns with LIKE clause within string data.
++------------------------------------------------------------------------+
+| It is used to search for patterns with LIKE clause within string data. |
++------------------------------------------------------------------------+
 ```
 
 ### 🔹 Select Records with `Wildcard %`
@@ -642,7 +658,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}AGGREGATE\ FUNCTIONS}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to perform a calculation on multiple rows and returns a single value. It is commonly used to summarize or analyze data.
++------------------------------------------------------------------------------------------------------------------------------------+
+| It is used to perform a calculation on multiple rows and returns a single value. It is commonly used to summarize or analyze data. |
++------------------------------------------------------------------------------------------------------------------------------------+
 ```
 
 ### 🔸 Select Records using `COUNT`
@@ -682,7 +700,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}CLAUSES}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to specify conditions or actions to be applied to the data. Clauses help to filter, group, sort, or limit the results of a query.
++----------------------------------------------------------------------------------------------------------------------------------------------+
+| It is used to specify conditions or actions to be applied to the data. Clauses help to filter, group, sort, or limit the results of a query. |
++----------------------------------------------------------------------------------------------------------------------------------------------+
 ```
 
 ### 🔹 Select Records using `WHERE`
@@ -768,7 +788,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}JOINS}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to combine rows from two or more tables, based on a related column between them.
++---------------------------------------------------------------------------------------------+
+| It is used to combine rows from two or more tables, based on a related column between them. |
++---------------------------------------------------------------------------------------------+
 ```
 
 ### 🔸 Fetch Student Records using `INNER JOIN`
@@ -871,7 +893,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}GRANT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to give a user access rights to the database.
++----------------------------------------------------------+
+| It is used to give a user access rights to the database. |
++----------------------------------------------------------+
 ```
   
 ### 🔹 Grant `SELECT` Permission on a Table
@@ -888,7 +912,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}REVOKE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to remove access rights from the database which is granted to a user.
++----------------------------------------------------------------------------------+
+| It is used to remove access rights from the database which is granted to a user. |
++----------------------------------------------------------------------------------+
 ```
 
 ### 🔸 Revoke `SELECT` Permission on a Table
@@ -907,7 +933,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}COMMIT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to save the current transaction permanently in the database. Once a COMMIT is executed, the changes are made permanent and cannot be rolled back.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| It is used to save the current transaction permanently in the database. Once a COMMIT is executed, the changes are made permanent and cannot be rolled back. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ```
   
 ### 🔹 Insert a Record and `Commit` the Transaction
@@ -924,7 +952,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}ROLLBACK}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Undo changes made in the current transaction.
++-------------------------------------------------------------+
+| It is used to Undo changes made in the current transaction. |
++-------------------------------------------------------------+
 ```
   
 ### 🔸 Insert a Record, but `Rollback` the Transaction
@@ -941,7 +971,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}SAVEPOINT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to set a point within a transaction to which you can roll back later.
++----------------------------------------------------------------------------------+
+| It is used to set a point within a transaction to which you can roll back later. |
++----------------------------------------------------------------------------------+
 ```
   
 ### 🔹 Using `SAVEPOINT` in a Transaction
@@ -965,7 +997,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}SET\ TRANSACTION}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to specify characteristics for the transaction (e.g., isolation level).
++------------------------------------------------------------------------------------+
+| It is used to specify characteristics for the transaction (e.g., isolation level). |
++------------------------------------------------------------------------------------+
 ```
   
 ### 🔸 Using `SET TRANSACTION ISOLATION LEVEL`
@@ -987,7 +1021,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}CONCAT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to combine two or more strings into one.
++-----------------------------------------------------+
+| It is used to combine two or more strings into one. |
++-----------------------------------------------------+
 ```
   
 ### 🔹 Concatenate `Adm_No` and `Stud_Name`
@@ -1006,7 +1042,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}SUB_STRING}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to extract a portion of a string.
++----------------------------------------------+
+| It is used to extract a portion of a string. |
++----------------------------------------------+
 ```
   
 ### 🔸 Extract `first 3 characters` of Stud_Name
@@ -1025,7 +1063,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}CHAR_LENGTH}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to show the number of characters in a string.
++----------------------------------------------------------+
+| It is used to show the number of characters in a string. |
++----------------------------------------------------------+
 ```
   
 ### 🔹 Find the length of `Stud_Name` (LEN)
@@ -1056,7 +1096,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}LETTER_CASE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to convert strings to uppercase or lowercase.
++----------------------------------------------------------+
+| It is used to convert strings to uppercase or lowercase. |
++----------------------------------------------------------+
 ```
   
 ### 🔸 Convert Stud_Name to `UPPERCASE`
@@ -1075,7 +1117,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}TRIM}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to remove leading and trailing spaces from a string.
++-----------------------------------------------------------------+
+| It is used to remove leading and trailing spaces from a string. |
++-----------------------------------------------------------------+
 ```
   
 ### 🔹 Remove `spaces` from Contact_Number
@@ -1100,7 +1144,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}REPLACE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to replace part of a string with another string.
++-------------------------------------------------------------+
+| It is used to replace part of a string with another string. |
++-------------------------------------------------------------+
 ```
   
 ### 🔸 Replace 'Md' with 'Mr.' in Stud_Name
@@ -1125,7 +1171,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}LEFT\/RIGHT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to extract a specified number of characters from the left or right side of a string.
++-------------------------------------------------------------------------------------------------+
+| It is used to extract a specified number of characters from the left or right side of a string. |
++-------------------------------------------------------------------------------------------------+
 ```
   
 ### 🔹 Extract `first 5` characters of Adm_No
@@ -1144,7 +1192,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}REVERSE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to reverse the order of characters in a string.
++------------------------------------------------------------+
+| It is used to reverse the order of characters in a string. |
++------------------------------------------------------------+
 ```
   
 ### 🔸 Reverse `Adm_No`
@@ -1163,7 +1213,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}REPLICATE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to repeat a string a specified number of times.
++------------------------------------------------------------+
+| It is used to repeat a string a specified number of times. |
++------------------------------------------------------------+
 ```
   
 ### 🔹 Repeat '*' symbol 5 times
@@ -1182,7 +1234,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}FORMAT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to format a value according to a format.
++-----------------------------------------------------+
+| It is used to format a value according to a format. |
++-----------------------------------------------------+
 ```
   
 ### 🔸 Format Contact_Number with `dashes`
