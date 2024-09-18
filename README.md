@@ -1,4 +1,4 @@
-# 🔳 Practice A 2 Z SQL Queries ${\color{Green}(using\ SQL\ SERVER)}$
+# 🔳 `A` ${\color{Red}2}$ `Z` SQL Queries ${\color{Green}(using\ SQL\ SERVER)}$
 
 ## 👇 ${\color{blue}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired}$ ${\color{red}SQL\ commands}$
 
