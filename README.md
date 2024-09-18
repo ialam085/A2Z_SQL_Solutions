@@ -2,7 +2,7 @@
 
 ## ©️ ${\color{grey}Developed\ and\ Maintained\ by:}$ ${\color{blue}Md\ Imtiyaz\ Alam}$
 
-## 👇 ${\color{Blue}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired}$ ${\color{red}SQL\ commands}$
+## 👇 ${\color{red}NAVIGATION}$
 
 
 | **🔹 DDL**                                                                                                         | **🔸 SCL**                                                                                                     | **🔹 DML**                                                                                                    | **🔸 DQL**                                                                                                      | **🔹 DCL**                                                                                                       | **🔸 TCL**                                                                                                          | **🔹 SFL**                                                                                                          |                                                                                                        |
