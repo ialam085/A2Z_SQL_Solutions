@@ -94,7 +94,7 @@
 
 
 
-# ◻️ Detailed view of all *SQL-Server* Commands with `Queries` and `Examples`
+# ◻️ Detailed view of all *SQL-Server* Commands with `QUERIES`
 
 ```sql
 Table: STUDENT
