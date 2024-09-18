@@ -26,59 +26,59 @@
 - Creating two Tables `Student` and `Exams`
 - Applying all `categories` of SQL Commands
      
-   - **DDL**: Defines Database structures.
+   - **${\color{red}DDL}$**: Defines Database structures.
  
-   - **SCL**: Manages the Database Session.
+   - **${\color{red}SCL}$**: Manages the Database Session.
  
-   - **DML**: Manipulates Data.
+   - **${\color{red}DML}$**: Manipulates Data.
  
-   - **DQL**: Queries and Retrieves data.
+   - **${\color{red}DQL}$**: Queries and Retrieves data.
 
-   - **DCL**: Manages access Permissions.
+   - **${\color{red}DCL}$**: Manages access Permissions.
 
-   - **TCL**: Controls Transactions.
+   - **${\color{red}TCL}$**: Controls Transactions.
  
-   - **SFL**: Manipulate and Transform String Data.
+   - **${\color{red}SFL}$**: Manipulate and Transform String Data.
 
 # ◻️ Categories of applied SQL Commands
 
-- **DDL** `(Data Definition Language)`: _It changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database._
+- **${\color{red}DDL}$** `(Data Definition Language)`: _It changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database._
 
    - CREATE `[Define DATA TYPES, CONSTRAINTS here]`
    - ALTER `(Rename/Add/Drop)`
    - DROP
    - TRUNCATE
 
-- **SCL** `(Session Control Language)`: _SCL is used to select a specific database to work with in a session._
+- **${\color{red}SCL}$** `(Session Control Language)`: _SCL is used to select a specific database to work with in a session._
 
    - USE
 
-- **DML** `(Data Manipulation Language)`: _DML commands are used to modify the database. The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback._
+- **${\color{red}DML}$** `(Data Manipulation Language)`: _DML commands are used to modify the database. The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback._
 
    - INSERT
    - UPDATE
    - DELETE
 
-- **DQL** `(Data Query Language)`: _DQL is used to fetch the data from the database._
+- **${\color{red}DQL}$** `(Data Query Language)`: _DQL is used to fetch the data from the database._
 
    - SELECT `[mostly OPERATORS used here]`
    - AGGREGATES `[SUM, COUNT, AVG, MIN, MAX]`
    - CLAUSES `[WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP]`
    - JOINS `[JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN, CROSS JOIN, UNION, UNION ALL, INTERSECT]`
 
-- **DCL** `(Data Control Language)`: _DCL commands are used to Grant and Revoke (take back) authority from any database user._
+- **${\color{red}DCL}$** `(Data Control Language)`: _DCL commands are used to Grant and Revoke (take back) authority from any database user._
 
    - GRANT
    - REVOKE
 
-- **TCL** `(Transaction Control Language)`: _TCL commands can only use with DML commands like INSERT, DELETE and UPDATE only._
+- **${\color{red}TCL}$** `(Transaction Control Language)`: _TCL commands can only use with DML commands like INSERT, DELETE and UPDATE only._
 
    - EGIN TRANSACTION
    - COMMIT
    - ROLLBACK
    - SAVEPOINT
 
-- **SFL** `(String Function Language)`: _It is a CONCEPTUAL category. SFL commands are used to manipulate and transform string data._
+- **${\color{red}SFL}$** `(String Function Language)`: _It is a CONCEPTUAL category. SFL commands are used to manipulate and transform string data._
 
    - CONCAT()
    - SUBSTRING() / MID()
