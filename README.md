@@ -1,6 +1,8 @@
 # 🔳 `A` ${\color{Red}2}$ `Z` SQL Queries ${\color{Green}(using\ SQL\ SERVER)}$
 
-## 👇 ${\color{blue}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired}$ ${\color{red}SQL\ commands}$
+## ©️ ${\color{grey}Developed\ and\ Maintained\ by:}$ ${\color{blue}Md\ Imtiyaz\ Alam}$
+
+## 👇 ${\color{Blue}Click\ the\ links\ below\ to\ navigate\ directly\ to\ the\ Desired}$ ${\color{red}SQL\ commands}$
 
 
 | **🔹 DDL**                                                                                                         | **🔸 SCL**                                                                                                     | **🔹 DML**                                                                                                    | **🔸 DQL**                                                                                                      | **🔹 DCL**                                                                                                       | **🔸 TCL**                                                                                                          | **🔹 SFL**                                                                                                          |                                                                                                        |
