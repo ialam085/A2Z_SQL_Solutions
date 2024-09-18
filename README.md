@@ -785,7 +785,7 @@ Table: EXAMS
 ```
 
 
-# 🔘 ${\color{blue}JOINS}$
+# 🔘 ${\color{blue}JOIN_S}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
 +---------------------------------------------------------------------------------------------+
