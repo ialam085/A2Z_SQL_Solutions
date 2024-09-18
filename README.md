@@ -26,19 +26,19 @@
 - Creating two Tables `Student` and `Exams`
 - Applying all `categories` of SQL Commands
      
-   - **${\color{red}DDL}$**: Defines Database structures.
+   - **${\color{blue}DDL}$**: Defines Database structures.
  
-   - **${\color{red}SCL}$**: Manages the Database Session.
+   - **${\color{blue}SCL}$**: Manages the Database Session.
  
-   - **${\color{red}DML}$**: Manipulates Data.
+   - **${\color{blue}DML}$**: Manipulates Data.
  
-   - **${\color{red}DQL}$**: Queries and Retrieves data.
+   - **${\color{blue}DQL}$**: Queries and Retrieves data.
 
-   - **${\color{red}DCL}$**: Manages access Permissions.
+   - **${\color{blue}DCL}$**: Manages access Permissions.
 
-   - **${\color{red}TCL}$**: Controls Transactions.
+   - **${\color{blue}TCL}$**: Controls Transactions.
  
-   - **${\color{red}SFL}$**: Manipulate and Transform String Data.
+   - **${\color{blue}SFL}$**: Manipulate and Transform String Data.
 
 # ◻️ Categories of applied SQL Commands
 
