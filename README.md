@@ -980,7 +980,7 @@ Table: EXAMS
 ```
 
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-# 🔘 ${\color{blue}SUBSTRING}$
+# 🔘 ${\color{blue}SUB_STRING}$
 ```diff
 + It is used to extract a portion of a string.
 ```
