@@ -25,7 +25,7 @@
 
 - Creating a Database `FSA`
 - Creating two Tables `Student` and `Exams`
-- Applying all categories of SQL Commands
+- Applying all `categories` of SQL Commands
      
    - **DDL**: Defines Database structures.
  
@@ -42,57 +42,56 @@
    - **SFL**: Manipulate and Transform String Data.
 
 ## ◻️ Categories of applied SQL Commands
-```diff
 
-- DDL (Data Definition Language): DDL changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database.
+- **DDL** `(Data Definition Language)`: _It changes the structure of the table like creating a table, deleting a table, altering a table, etc. All the command of DDL are auto-committed that means it permanently save all the changes in the database._
 
-+ CREATE [Define DATA TYPES here]
-+ ALTER (Rename)
-+ DROP
-+ TRUNCATE
+   - CREATE `[Define DATA TYPES, CONSTRAINTS here]`
+   - ALTER `(Rename)`
+   - DROP
+   - TRUNCATE
 
-- SCL (Session Control Language): SCL is used to select a specific database to work with in a session.
+- **SCL** `(Session Control Language)`: _SCL is used to select a specific database to work with in a session._
 
-+ USE
+   - USE
 
-- DML (Data Manipulation Language): DML commands are used to modify the database. The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback.
+- **DML** `(Data Manipulation Language)`: _DML commands are used to modify the database. The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback._
 
-+ INSERT
-+ UPDATE
-+ DELETE
+   - INSERT
+   - UPDATE
+   - DELETE
 
-- DQL (Data Query Language): DQL is used to fetch the data from the database.
+- **DQL** `(Data Query Language)`: _DQL is used to fetch the data from the database._
 
-+ SELECT [mostly OPERATORS used here]
-+ AGGREGATE functions [SUM(), COUNT(), AVG(), MIN(), MAX()]
-+ CLAUSES [where, group by, having, order by, limit]
-+ JOINS [(inner) join, left join, right join, outer join, self join, cross join]
+   - SELECT `[mostly OPERATORS used here]`
+   - AGGREGATE functions `[SUM(), COUNT(), AVG(), MIN(), MAX()]`
+   - CLAUSES `[WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP]`
+   - JOINS `[(INNER) JOIN, LEFT (OUTER) JOIN, RIGHT (OUTER) JOIN, FULL (OUTER) JOIN, SELF JOIN, CROSS JOIN, UNION, UNION ALL, INTERSECT]`
 
-- DCL (Data Control Language): DCL commands are used to Grant and Revoke (take back) authority from any database user.
+- **DCL** `(Data Control Language)`: _DCL commands are used to Grant and Revoke (take back) authority from any database user._
 
-+ GRANT
-+ REVOKE
+   - GRANT
+   - REVOKE
 
-- TCL (Transaction Control Language): TCL commands can only use with DML commands like INSERT, DELETE and UPDATE only.
+- **TCL** `(Transaction Control Language)`: _TCL commands can only use with DML commands like INSERT, DELETE and UPDATE only._
 
-+ BEGIN TRANSACTION
-+ COMMIT
-+ ROLLBACK
-+ SAVEPOINT
+   - EGIN TRANSACTION
+   - COMMIT
+   - ROLLBACK
+   - SAVEPOINT
 
-- SFL (String Function Language): It is a CONCEPTUAL category. SFL commands are used to manipulate and transform string data.
+- **SFL** `(String Function Language)`: _It is a CONCEPTUAL category. SFL commands are used to manipulate and transform string data._
 
-+ CONCAT()
-+ SUBSTRING() / MID()
-+ CHAR_LENGTH() / LENGTH()
-+ UPPER() / LOWER()
-+ TRIM()
-+ REPLACE() / STUFF()
-+ LEFT() / RIGHT()
-+ REVERSE
-+ REPLICATE
-+ FORMAT
-```
+   - CONCAT()
+   - SUBSTRING() / MID()
+   - CHAR_LENGTH() / LENGTH()
+   - UPPER() / LOWER()
+   - TRIM()
+   - REPLACE() / STUFF()
+   - LEFT() / RIGHT()
+   - REVERSE
+   - REPLICATE
+   - FORMAT
+
 
 
 ## ◻️ Detailed view of all *SQL-Server* Commands with `Queries` and `Examples`
