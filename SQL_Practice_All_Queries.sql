@@ -1,22 +1,21 @@
-/* Table: STUDENT
+/*
 Table: STUDENT
++------------+-----------+------------------+-------+-----------------+----------+----------------+-------+-----+------------+
+| Adm_No     | DOJ       | Stud_Name        |Gender | Guardian_Name   | Address  | Contact_Number | Class | Fee | Monitor_ID |
++------------+-----------+------------------+-------+-----------------+----------+----------------+-------+-----+------------+
+| ROSE00023  | 10/1/2021 | Abu Talha        | M     | Md Fareed       | Delhi    | 7903077297     | 10    | 400 | NULL       |
+| ROSE00024  | 10/1/2021 | Abu Salesh       | M     | Md Fareed       | Delhi    | 7903077297     | 8     | 450 | ROSE00023  |
+| ROSE00040  | 10/1/2021 | Md Neyamul       | M     | Md Shamsuddin   | Chennai  | 9661194838     | 7     | 350 | ROSE00023  |
+| ROSE00041  | 6/8/2021  | Ruba Parveen     | F     | Md Parwez       | Delhi    | 9693461570     | 5     | 275 | ROSE00023  |
+| ROSE00058  | 10/2/2021 | Md Muntazeem     | M     | Md Naimuddin    | Pune     | 8292149189     | 10    | 325 | ROSE00023  |
+| ROSE00102  | 10/29/2021| Mantasha Khatoon | F     | Hasnain         | Noida    | 9709148101     | 6     | 250 | ROSE00144  |
+| ROSE00144  | 12/1/2021 | Arju Kumar       | M     | Ranjit Kumar Sah| Mumbai   | 6206863026     | 8     | 300 | ROSE00058  |
+| ROSE00145  | 12/1/2021 | Roji Kumari      | F     | Ranjit Kumar Sah| Mumbai   | 6206863026     | 7     | 300 | ROSE00144  |
+| ROSE00172  | 12/4/2021 | Md Azfar         | M     | Md Mushtaque    | Sikkim   | 7631041561     | 10    | 300 | ROSE00058  |
+| ROSE00331  | 2/3/2023  | Juveria Khatoon  | F     | Saud Alam       | Chennai  | 7330859950     | 8     | 300 | ROSE00058  |
+| ROSE00335  | 9/4/2023  | Manish Kumar     | M     | Ranjan Kumar    | Noida    | 9060609777     | 9     | 350 | ROSE00058  |
+| ROSE00041  | 6/8/2021  | Ruba Parveen     | F     | Md Parwez       | Delhi    | 9693461570     | 5     | 275 | ROSE00144  |
 +------------+-----------+------------------+-------+-----------------+-------------+----------------+-------+-----+------------+
-| Adm_No     | DOJ       | Stud_Name        |Gender | Guardian_Name   | Address     | Contact_Number | Class | Fee | Monitor_ID |
-+------------+-----------+------------------+-------+-----------------+-------------+----------------+-------+-----+------------+
-| ROSE00023  | 10/1/2021 | Abu Talha        | M     | Md Fareed       | Khiripaghar | 7903077297     | 10    | 400 | NULL       |
-| ROSE00024  | 10/1/2021 | Abu Salesh       | M     | Md Fareed       | Khiripaghar | 7903077297     | 8     | 450 | ROSE00023  |
-| ROSE00040  | 10/1/2021 | Md Neyamul       | M     | Md Shamsuddin   | Gauripur    | 9661194838     | 7     | 350 | ROSE00023  |
-| ROSE00041  | 6/8/2021  | Ruba Parveen     | F     | Md Parwez       | Khiripaghar | 9693461570     | 5     | 275 | ROSE00023  |
-| ROSE00058  | 10/2/2021 | Md Muntazeem     | M     | Md Naimuddin    | Rajapur     | 8292149189     | 10    | 325 | ROSE00023  |
-| ROSE00102  | 10/29/2021| Mantasha Khatoon | F     | Hasnain         | Nayadih     | 9709148101     | 6     | 250 | ROSE00144  |
-| ROSE00144  | 12/1/2021 | Arju Kumar       | M     | Ranjit Kumar Sah| Chilmil     | 6206863026     | 8     | 300 | ROSE00058  |
-| ROSE00145  | 12/1/2021 | Roji Kumari      | F     | Ranjit Kumar Sah| Chilmil     | 6206863026     | 7     | 300 | ROSE00144  |
-| ROSE00172  | 12/4/2021 | Md Azfar         | M     | Md Mushtaque    | Maghota     | 7631041561     | 10    | 300 | ROSE00058  |
-| ROSE00331  | 2/3/2023  | Juveria Khatoon  | F     | Saud Alam       | Chihar      | 7330859950     | 8     | 300 | ROSE00058  |
-| ROSE00335  | 9/4/2023  | Manish Kumar     | M     | Ranjan Kumar    | Barahat     | 9060609777     | 9     | 350 | ROSE00058  |
-| ROSE00041  | 6/8/2021  | Ruba Parveen     | F     | Md Parwez       | Khiripaghar | 9693461570     | 5     | 275 | ROSE00144  |
-+------------+-----------+------------------+-------+-----------------+-------------+----------------+-------+-----+------------+
-
 
 Table: EXAMS
 +------------+--------------+---------------+----------------+------------+
