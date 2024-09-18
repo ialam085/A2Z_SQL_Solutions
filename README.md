@@ -12,7 +12,6 @@
 |                                                                                                                 |                                                                                                             |                                                                                                            | [JOINS](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluejoins)      |                                                                                                               |                                                                                                                  | [TRIM](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorbluetrim)             | [FORMAT](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueformat)       |
 
 
-
 # ◻️ Objective
 
 - The objective of the SQL report is to understand all the **Basic SQL-Server Queries** as well as all kind of **String Functions**.
@@ -145,7 +144,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}CREATE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Create new Databases, Tables, Constraints, Views, Indexes.
++--------------------------------------------------------------------------+
+| It is used to Create new Databases, Tables, Constraints, Views, Indexes. |
++--------------------------------------------------------------------------+
 ```
 ### 🔸 Create a new `DATABASE` named 'FSA'
 ```sql
@@ -213,7 +214,9 @@ Table: EXAMS
 # 🔘 ${\color{blue}ALTER}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+ It is used to Alter (change) the structure of the Table and the name of the Database.
++---------------------------------------------------------------------------------------+
+| It is used to Alter (change) the structure of the Table and the name of the Database. |
++---------------------------------------------------------------------------------------+
 ```
 ### 🔹 Alter a `DATABASE` _FSA_ to 'FSA_new'
 ```sql 
