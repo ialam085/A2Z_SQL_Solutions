@@ -793,7 +793,7 @@ Table: EXAMS
 +---------------------------------------------------------------------------------------------+
 ```
 
-### 🔸 Fetch Student Records using `INNER JOIN`
+### 🔸 Fetch Student Records using `(INNER) JOIN`
 - **`(INNER) JOIN`: Returns records that have only MATCHING (Common) VALUES IN BOTH TABLES.**
 ```sql
       SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
@@ -816,7 +816,7 @@ Table: EXAMS
       WHERE E.Marks_Obtained > 85;                        -- Fetches students who scored more than 85 marks in any exam
 ```
 
-### 🔸 Fetch Student Records using `LEFT JOIN`
+### 🔸 Fetch Student Records using `LEFT (OUTER) JOIN`
 - **`LEFT (OUTER) JOIN`: Returns all records from the LEFT TABLE, and the matched records from the RIGHT TABLE.**
 ```sql
       SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
@@ -831,7 +831,7 @@ Table: EXAMS
       ON S.Adm_No = E.Adm_No;
 ```
 
-### 🔸 Fetch Student Records using `RIGHT JOIN`
+### 🔸 Fetch Student Records using `RIGHT (OUTER) JOIN`
 - **`RIGHT (OUTER) JOIN`: Returns all records from the RIGHT TABLE, and the matched records from the LEFT TABLE.**
 ```sql
       SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
@@ -846,7 +846,7 @@ Table: EXAMS
       ON S.Adm_No = E.Adm_No;           -- RIGHT OUTER JOIN acts as similar to RIGHT JOIN
 ```
 
-### 🔸 Fetch Student Records using `OUTER JOIN`
+### 🔸 Fetch Student Records using `FULL (OUTER) JOIN`
 - **`FULL (OUTER) JOIN`: Returns all records when there is a match in either LEFT or RIGHT TABLE.**
 ```sql
       SELECT S.Adm_No, S.Stud_Name, E.Subject_Name, E.Marks_Obtained
