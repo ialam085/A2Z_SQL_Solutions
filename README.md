@@ -82,13 +82,13 @@
 
 - **${\color{red}SFL}$** `(String Function Language)`: _It is a CONCEPTUAL category. SFL commands are used to manipulate and transform string data._
 
-   - CONCAT()
-   - SUBSTRING() / MID()
-   - CHAR_LENGTH() / LENGTH()
-   - UPPER() / LOWER()
-   - TRIM()
-   - REPLACE() / STUFF()
-   - LEFT() / RIGHT()
+   - CONCAT
+   - SUBSTRING / MID
+   - CHAR_LENGTH / LENGTH
+   - UPPER / LOWER
+   - TRIM
+   - REPLACE / STUFF
+   - LEFT / RIGHT
    - REVERSE
    - REPLICATE
    - FORMAT
