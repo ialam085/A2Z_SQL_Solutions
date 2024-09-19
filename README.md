@@ -140,7 +140,7 @@ Table: EXAMS
 +------------+--------------+--------------+----------------+------------+
 ```
 
-# 📗 DDL (_Data Definition Language_)
+# 📗 DDL (`Data Definition Language`)
 
 
 # 🔘 ${\color{blue}CREATE}$
@@ -301,7 +301,7 @@ Table: EXAMS
       TRUNCATE TABLE STUDENT;
 ```
 
-# 📗 SCL (_Session Control Language_)
+# 📗 SCL (`Session Control Language`)
 
 
 # 🔘 ${\color{blue}USE}$
@@ -316,7 +316,7 @@ Table: EXAMS
       USE FSA;
 ```
 
-# 📗 DML (_Data Manipulation Language_)
+# 📗 DML (`Data Manipulation Language`)
 
 
 # 🔘 ${\color{blue}INSERT}$
@@ -445,7 +445,7 @@ Table: EXAMS
 ```
 
 
-# 📗 DQL (_Data Query Language_)
+# 📗 DQL (`Data Query Language`)
 
 
 # 🔘 ${\color{blue}SELEC T}$
@@ -889,7 +889,7 @@ Table: EXAMS
       SELECT Guardian_Name FROM STUDENT;
 ```
 
-# 📗 DCL (_Data Control Language_)
+# 📗 DCL (`Data Control Language`)
 
 
 # 🔘 ${\color{blue}GRANT}$
@@ -929,7 +929,7 @@ Table: EXAMS
       REVOKE INSERT, UPDATE ON STUDENT TO UserA;              -- Removes the ability for UserA to insert new records or update existing ones in the STUDENT table
 ```
 
-# 📗 TCL (_Transaction Control Language_)
+# 📗 TCL (`Transaction Control Language`)
 
 
 # 🔘 ${\color{blue}COMMIT}$
@@ -1017,7 +1017,7 @@ Table: EXAMS
       COMMIT;
 ```
 
-# 📗 SFL (_String Function Language_) - `Conceptual`
+# 📗 SFL (`String Function Language`) - `Conceptual`
 
 
 # 🔘 ${\color{blue}CONCAT}$
