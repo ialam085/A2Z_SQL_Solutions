@@ -95,7 +95,7 @@
 
 
 
-# ◻️ Detailed view of all *SQL-Server* Commands with `QUERIES`
+# ◻️ Detailed view of all *SQL-Server* Commands with `QUERIES` and `SCRIPTS`
 
 ```sql
 Table: STUDENT
