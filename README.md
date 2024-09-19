@@ -16,7 +16,7 @@
 
 # ◻️ Objective
 
-- The objective of the SQL report is to understand all the **Basic SQL-Server Queries** as well as all kind of **String Functions**.
+- The objective of the SQL report is to understand all the **Basic SQL-Server Queries/Scripts** as well as all kind of **String Functions**.
 
 # ◻️ Tech Stack
 
