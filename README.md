@@ -40,7 +40,7 @@
 
    - **${\color{blue}TCL}$**: Controls Transactions.
  
-   - **${\color{blue}SFL}$**: Manipulate and Transform String Data.
+   - **${\color{blue}SFL}$**: Returns a single value.
 
 # ◻️ Categories of applied SQL Commands
 
@@ -80,7 +80,7 @@
    - ROLLBACK
    - SAVEPOINT
 
-- **${\color{red}SFL}$** `(String Function Language)`: _It is a CONCEPTUAL category. SFL commands are used to manipulate and transform string data._
+- **${\color{red}SFL}$** `(Scalar Function Language)`: _It is a CONCEPTUAL category. SFL commands are used to return a single value (scalar) based on the input provided._
 
    - CONCAT
    - SUBSTRING / MID
