@@ -756,7 +756,7 @@ Table: EXAMS
        ORDER BY Class DESC;
 ```
 
-### 🔹 Select Records using `LIMIT/TOP`
+### 🔹 Select Records using `TOP/OFFSET/FETCH`
 - **`TOP` clause: `Limit` the number of rows returned.**
 ```sql
        SELECT TOP 5 * FROM STUDENT
@@ -765,6 +765,12 @@ Table: EXAMS
 ```sql
        SELECT TOP 5 Adm_No, Stud_Name FROM STUDENT
        ORDER BY Fee DESC;                                    -- Retrieve the top 5 students table Adm_No and Stud_Name columns by Fee in descending order
+```
+```sql
+       SELECT Adm_No, Marks_Obtained FROM EXAMS
+       ORDER BY Marks_Obtained DESC
+       OFFSET 3 ROWS                                         -- Skip (Offset) 1st 3 rows and then return next 5 rows
+       FETCH NEXT 5 ROWS ONLY;                               -- Retrieve the top 5 EXAMS table Adm_No and Marks_Obtained columns by Marks_Obtained in descending order
 ```
 
 ### 🔹 Select Records using `DISTINCT`
