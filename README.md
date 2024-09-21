@@ -30,8 +30,6 @@
      
    - **${\color{blue}DDL}$**: Defines Database structures.
  
-   - **${\color{blue}SCL}$**: Manages the Database Session.
- 
    - **${\color{blue}DML}$**: Manipulates Data.
  
    - **${\color{blue}DQL}$**: Queries and Retrieves data.
@@ -41,6 +39,8 @@
    - **${\color{blue}TCL}$**: Controls Transactions.
  
    - **${\color{blue}SFL}$**: Returns a single value.
+ 
+   - **${\color{blue}WFL}$**: Returns a value based on a set of rows.
 
 # ◻️ Categories of applied SQL Commands
 
@@ -51,10 +51,6 @@
    - DROP
    - TRUNCATE
 
-- **${\color{red}SCL}$** `(Session Control Language)`: _SCL is used to select a specific database to work with in a session._
-
-   - USE
-
 - **${\color{red}DML}$** `(Data Manipulation Language)`: _DML commands are used to modify the database. The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback._
 
    - INSERT
@@ -64,7 +60,6 @@
 - **${\color{red}DQL}$** `(Data Query Language)`: _DQL is used to fetch the data from the database._
 
    - SELECT `[mostly OPERATORS used here]`
-   - AGGREGATES `[SUM, COUNT, AVG, MIN, MAX]`
    - CLAUSES `[WHERE, GROUP BY, HAVING, ORDER BY, LIMIT/TOP]`
    - JOINS `[JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN, CROSS JOIN, UNION, UNION ALL, INTERSECT]`
 
@@ -80,18 +75,19 @@
    - ROLLBACK
    - SAVEPOINT
 
-- **${\color{red}SFL}$** `(Scalar Function Language)`: _It is a CONCEPTUAL category. SFL commands are used to return a single value (scalar) based on the input provided._
+- **${\color{red}SFL}$** `(Scalar Functions Library)`: _SFL commands are used to return a single value based on the input provided._
 
-   - CONCAT
-   - SUBSTRING / MID
-   - CHAR_LENGTH / LENGTH
-   - UPPER / LOWER
-   - TRIM
-   - REPLACE / STUFF
-   - LEFT / RIGHT
-   - REVERSE
-   - REPLICATE
-   - FORMAT
+   - STRING FUNCTIONS `[CONCAT, SUBSTRING, CHARINDEX, PATINDEX, CHAR LENGTH, LETTER CASE, TRIM, REPLACE, LEFT/RIGHT, REVERSE, REPLICATE, FORMAT]`
+   - MATHEMATICAL FUNCTIONS `[ABS, ROUND, SQRT, CEILING, FLOOR, POWER, EXP, LOG]`
+   - DATE FUNCTIONS `[GETDATE, YEAR, MONTH, DAY, DATEADD, DATEDIFF]`
+   - CONVERSION FUNCTIONS `[CAST, CONVERT, TRY_CAST, TRY_CONVERT]`
+   - LOGICAL FUNCTIONS `[COALESCE, ISNULL]`
+
+- **${\color{red}WFL}$** `(Windows Functions Library)`: _WFL commands are used to return a value based on a set of rows related to the current row._
+
+   - AGGREGATE FUNCTIONS `[COUNT, AVG, SUM, MIN, MAX]`
+   - RANKING FUNCTIONS `[ROW_NUMBER, DENSE_RANK, RANK, NTILE]`
+   - ANALYTIC FUNCTIONS `[CUME_DIST, PERCENT_RANK, FIRST_VALUE, LAST_VALUE, LAG, LEAD]`
 
 
 
@@ -1071,15 +1067,15 @@ Table: EXAMS
       COMMIT;
 ```
 
-# 📗 SFL (`String Function Language`) - `Conceptual`
+# 📗 SFL (`Scalar Functions Library`)
 
 
-# 🔘 ${\color{blue}CONCAT}$
+# 🔘 ${\color{blue}STRING\ FUNCTIONS}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+-----------------------------------------------------+
-| It is used to combine two or more strings into one. |
-+-----------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+| It is used to manipulate string data for tasks like concatenation, extraction, and formatting. |
++------------------------------------------------------------------------------------------------+
 ```
   
 ### 🔹 Concatenate `Adm_No` and `Stud_Name`
@@ -1093,15 +1089,6 @@ Table: EXAMS
       SELECT CONCAT('Name: ', Stud_Name, ', Guardian: ', Guardian_Name) AS [Full Details]
       FROM STUDENT;
 ```
-
-
-# 🔘 ${\color{blue}SUB_STRING}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+----------------------------------------------+
-| It is used to extract a portion of a string. |
-+----------------------------------------------+
-```
   
 ### 🔸 Extract `first 3 characters` of Stud_Name
 ```sql      
@@ -1113,15 +1100,6 @@ Table: EXAMS
 ```sql      
       SELECT SUBSTRING(Adm_No, 5, 4) AS PartAdmNo
       FROM STUDENT;
-```
-
-
-# 🔘 ${\color{blue}CHAR_LENGTH}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+----------------------------------------------------------+
-| It is used to show the number of characters in a string. |
-+----------------------------------------------------------+
 ```
   
 ### 🔹 Find the length of `Stud_Name` (LEN)
@@ -1147,15 +1125,6 @@ Table: EXAMS
       SELECT PATINDEX('%R%', Stud_Name) AS R_Position
       FROM STUDENT;
 ```
-
-
-# 🔘 ${\color{blue}LETTER_CASE}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+----------------------------------------------------------+
-| It is used to convert strings to uppercase or lowercase. |
-+----------------------------------------------------------+
-```
   
 ### 🔸 Convert Stud_Name to `UPPERCASE`
 ```sql      
@@ -1167,15 +1136,6 @@ Table: EXAMS
 ```sql      
       SELECT LOWER(Address) AS LowerCaseAddress
       FROM STUDENT;
-```
-
-
-# 🔘 ${\color{blue}TRIM}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+-----------------------------------------------------------------+
-| It is used to remove leading and trailing spaces from a string. |
-+-----------------------------------------------------------------+
 ```
   
 ### 🔹 Remove `spaces` from Contact_Number
@@ -1195,15 +1155,6 @@ Table: EXAMS
       SELECT RTRIM(Stud_Name) AS Trimmed_Right_Name
       FROM STUDENT;
 ```
-
-
-# 🔘 ${\color{blue}REPLACE}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+-------------------------------------------------------------+
-| It is used to replace part of a string with another string. |
-+-------------------------------------------------------------+
-```
   
 ### 🔸 Replace 'Md' with 'Mr.' in Stud_Name
 ```sql      
@@ -1222,15 +1173,6 @@ Table: EXAMS
       SELECT STUFF(Stud_Name, 1, 0, 'Dr. ') AS Stuffed_Name
       FROM STUDENT;
 ```
-
-
-# 🔘 ${\color{blue}LEFT\/RIGHT}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+-------------------------------------------------------------------------------------------------+
-| It is used to extract a specified number of characters from the left or right side of a string. |
-+-------------------------------------------------------------------------------------------------+
-```
   
 ### 🔹 Extract `first 5` characters of Adm_No
 ```sql      
@@ -1243,61 +1185,34 @@ Table: EXAMS
       SELECT RIGHT(Contact_Number, 4) AS LastFourDigits
       FROM STUDENT;
 ```
-
-
-# 🔘 ${\color{blue}REVERSE}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+------------------------------------------------------------+
-| It is used to reverse the order of characters in a string. |
-+------------------------------------------------------------+
-```
   
 ### 🔸 Reverse `Adm_No`
 ```sql      
-      SELECT REVERSE(Adm_No) AS ReversedAdmNo
+      SELECT REVERSE(Adm_No) AS ReversedAdmNo               -- reverse the order of characters in a string
       FROM STUDENT;
 ```
 
 ### 🔸 Reverse `Stud_Name`
 ```sql      
-      SELECT REVERSE(Stud_Name) AS ReversedName
+      SELECT REVERSE(Stud_Name) AS ReversedName             -- reverse the order of characters in a string
       FROM STUDENT;
-```
-
-
-# 🔘 ${\color{blue}REPLICATE}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+------------------------------------------------------------+
-| It is used to repeat a string a specified number of times. |
-+------------------------------------------------------------+
 ```
   
 ### 🔹 Repeat '*' symbol 5 times
 ```sql      
-      SELECT REPLICATE('*', 5) AS Stars
+      SELECT REPLICATE('*', 5) AS Stars                      -- Return star (*) 5 times
       FROM STUDENT;
 ```
 
 ### 🔹 Repeat `Stud_Name` twice
 ```sql      
-      SELECT REPLICATE(Stud_Name, 2) AS DoubledName
+      SELECT REPLICATE(Stud_Name, 2) AS DoubledName          -- Return the same Student Name 2 times
       FROM STUDENT;
-```
-
-
-# 🔘 ${\color{blue}FORMAT}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+-----------------------------------------------------+
-| It is used to format a value according to a format. |
-+-----------------------------------------------------+
 ```
   
 ### 🔸 Format Contact_Number with `dashes`
 ```sql      
-      SELECT FORMAT(Contact_Number, '###-###-####') AS FormattedContact
+      SELECT FORMAT(Contact_Number, '###-###-####') AS FormattedContact   -- format a value according to a format
       FROM STUDENT;
 ```
 
