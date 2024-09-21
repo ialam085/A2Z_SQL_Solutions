@@ -143,6 +143,49 @@ Table: EXAMS
 # 📗 DDL (`Data Definition Language`)
 
 
+# 🔘 ${\color{blue}USE}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++---------------------------------------------------------------------------------------------------------------------------------+
+| Specifically it comes under SCL (Session Control Language). It is used to select a specific Database to work with in a session. |
++---------------------------------------------------------------------------------------------------------------------------------+
+```
+### 🔸 Using an Existing `DATABASE` named 'FSA'
+```sql      
+      USE FSA;
+```
+
+# 🔘 ${\color{blue}SCHEMA}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++----------------------------------------------------------------------------------------------------------------------------------+
+| A schema is like a container for Database objects (tables) that can contain multiple relational tables for a project/department. |
+| A database might have multiple schemas                                                                                           |
++----------------------------------------------------------------------------------------------------------------------------------+
+```
+### 🔹 Create a new `SCHEMA` named 'INSTITUTE'
+```sql      
+      CREATE SCHEMA INSTITUTE;
+```
+
+### 🔹 Create a Table `within Schema` INSTITUTE
+```sql      
+      CREATE TABLE INSTITUTE.RESULT (
+                                      Adm_No VARCHAR(20) PRIMARY KEY,
+                                      Tot_Marks INT,
+                                      Grade VARCHAR(30)
+                                    );
+```
+
+### 🔹 Transfer Table `Student` into Schema `INSTITUTE`
+```sql      
+      ALTER SCHEMA INSTITUTE TRANSFER dbo.Student;     -- dbo.student means student table in current database (dbo) transferring to schema 'Institute'
+```
+```sql      
+      ALTER SCHEMA INSTITUTE TRANSFER HR.Student;     -- HR.student means student table in Old schema (HR) transferring to New schema 'Institute' in current database
+```
+
+
 # 🔘 ${\color{blue}CREATE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
@@ -271,6 +314,10 @@ Table: EXAMS
 ```sql      
       DROP DATABASE FSA;
 ```
+### 🔸 Drop the `Schema` 'HR'
+```sql      
+      DROP SCHEMA HR;
+```
 ### 🔸 Drop the `Table` 'Student'
 ```sql      
       DROP TABLE STUDENT;
@@ -279,6 +326,10 @@ Table: EXAMS
 ```sql      
       ALTER TABLE STUDENT
       DROP COLUMN Email;
+```
+### 🔸 Drop the `View` 'Class10_Students'
+```sql      
+      DROP VIEW Class10_Students;
 ```
 ### 🔸 Drop an `Index` 'idx_StudName'
 ```sql      
@@ -301,20 +352,6 @@ Table: EXAMS
       TRUNCATE TABLE STUDENT;
 ```
 
-# 📗 SCL (`Session Control Language`)
-
-
-# 🔘 ${\color{blue}USE}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+---------------------------------------------------------------------+
-| It is used to select a specific Database to work with in a session. |
-+---------------------------------------------------------------------+
-```
-### 🔸 Using an Existing `DATABASE` named 'FSA'
-```sql      
-      USE FSA;
-```
 
 # 📗 DML (`Data Manipulation Language`)
 
@@ -484,6 +521,14 @@ Table: EXAMS
 ### 🔸 Select `All Columns` from a Table 'Exams'
 ```sql      
       SELECT * FROM EXAMS;
+```
+### 🔸 Select `Table` 'Exams' Columns from `Schema` 'Institute'
+```sql      
+      SELECT * FROM INSTITUTE.EXAMS;         -- Select Records from Schema (Institute), Table (Exams) = Schema.Table
+```
+### 🔸 Select `Table` 'Exams' Columns from `Schema` 'Institute' in `Database` 'FSA'
+```sql      
+      SELECT * FROM FSA.INSTITUTE.EXAMS;         -- Select Records from Database (FSA), Schema (Institute), Table (Exams) = Database.Schema.Table
 ```
 ### 🔸 Select `Specific Columns` from a Table 'Student'
 ```sql      
@@ -660,9 +705,10 @@ Table: EXAMS
 # 🔘 ${\color{blue}AGGREGATE\ FUNCTIONS}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+------------------------------------------------------------------------------------------------------------------------------------+
-| It is used to perform a calculation on multiple rows and returns a single value. It is commonly used to summarize or analyze data. |
-+------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+| It is used to perform a calculation on multiple rows and returns a single value. |
+| It is commonly used to summarize or analyze data.                                |
++----------------------------------------------------------------------------------+
 ```
 
 ### 🔸 Select Records using `COUNT`
@@ -702,9 +748,10 @@ Table: EXAMS
 # 🔘 ${\color{blue}CLAUSES}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-| It is used to specify conditions or actions to be applied to the data. Clauses help to filter, group, sort, or limit the results of a query. |
-+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------+
+| It is used to specify conditions or actions to be applied to the data. |
+| Clauses help to filter, group, sort, or limit the results of a query.  |
++------------------------------------------------------------------------+
 ```
 
 ### 🔹 Select Records using `WHERE`
@@ -941,9 +988,10 @@ Table: EXAMS
 # 🔘 ${\color{blue}COMMIT}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| It is used to save the current transaction permanently in the database. Once a COMMIT is executed, the changes are made permanent and cannot be rolled back. |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+| It is used to save the current transaction permanently in the database.              |
+| Once a COMMIT is executed, the changes are made permanent and cannot be rolled back. |
++--------------------------------------------------------------------------------------+
 ```
   
 ### 🔹 Insert a Record and `Commit` the Transaction
