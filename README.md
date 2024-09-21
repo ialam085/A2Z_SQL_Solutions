@@ -143,7 +143,7 @@ Table: EXAMS
 # 📗 DDL (`Data Definition Language`)
 
 
-# 🔘 ${\color{blue}USE}$
+# 🔘 ${\color{blue}USE}$ (SCL)
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
 +---------------------------------------------------------------------------------------------------------------------------------+
