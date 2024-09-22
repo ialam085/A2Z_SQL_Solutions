@@ -478,6 +478,26 @@ Table: EXAMS
 ```
 
 
+# 🔘 ${\color{blue}STORED\ PROCEDURE}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++---------------------------------------------------------------------------------------------+
+| It is a precompiled SQL code stored in the database, that can be executed as a single unit. |
+| If any SQL query need to write again and again then same can be saved as Stored Procedure.  |
++---------------------------------------------------------------------------------------------+
+```
+
+### 🔹 CREATE Stored Procedure named `StudentInfo` from Student Table
+```sql      
+      CREATE PROCEDURE StudentInfo
+      AS                                  -- BEGIN and END are used to define the start and end of the executable block within a stored procedure,
+      BEGIN                               -- allowing multiple SQL statements to be grouped together. 
+           SELECT * FROM Student;      
+      END;
+      GO                                  -- 'GO' is not an actual SQL command, It is a part of SSMS which indicates end of Batch (group of commands) in SSMS
+```
+
+
 # 📗 DQL (`Data Query Language`)
 
 
