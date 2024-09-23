@@ -487,14 +487,86 @@ Table: EXAMS
 +---------------------------------------------------------------------------------------------+
 ```
 
-### 🔹 CREATE Stored Procedure named `StudentInfo` from Student Table
+### 🔹 CREATE a Table 'EmpInfo' `Outside Stored Procedure`
+```sql 
+      CREATE TABLE EmpInfo (
+                      Emp_ID INT PRIMARY KEY,                    -- Constraint PRIMARY KEY (by default contains NOT NULL)
+                      Emp_Name VARCHAR(50) NOT NULL,             -- Constraint NOT NULL
+                      Department VARCHAR(50),
+                      Salary INT NOT NULL CHECK (Salary > 10000) -- Constraints NOT NULL & Checks Salary more than 10,000
+                     );
+```
+### 🔹 `Stored Procedure` to `INSERT` Records into 'EmpInfo' Table
+```sql 
+      CREATE PROCEDURE InsertEmpInfo
+					            @Emp_ID INT,               -- '@' symbol is used to declare variables or parameters in SQL Server
+                                     @Emp_Name VARCHAR(50),
+                                     @Department VARCHAR(50),
+                                     @Salary INT
+      AS
+      BEGIN
+	 INSERT INTO EmpInfo (Emp_ID, Emp_Name, Department, Salary)
+	              VALUES (@Emp_ID, @Emp_Name, @Department, @Salary);
+      END;
+```
+```sql
+                    -- SP can be called by EXEC command and pass the required parameters
+                    -- Inserting a new employee into the EmpInfo table, Can be inserted one or multi values/informations using EXEC command
+
+      EXEC InsertEmpInfo @Emp_ID = 1, @Emp_Name = 'John Doe', @Department = 'HR', @Salary = 10500;
+
+      EXEC InsertEmpInfo @Emp_ID = 2, @Emp_Name = 'Jane Smith', @Department = 'Finance', @Salary = 12000;
+```
+
+### 🔹 `Stored Procedure` to `UPDATE` Records into 'EmpInfo' Table
+```sql 
+      CREATE PROCEDURE UpdateEmpInfo
+					            @Emp_ID INT,
+                                     @Emp_Name VARCHAR(50),
+                                     @Department VARCHAR(50),
+                                     @Salary INT
+      AS
+      BEGIN
+	 UPDATE EmpInfo
+                     SET Emp_Name    =  @Emp_Name, 
+                         Department  =  @Department, 
+                         Salary      =  @Salary
+         WHERE Emp_ID = @Emp_ID;
+      END;
+```
+```sql
+      EXEC UpdateEmpInfo                                  -- SP can be called by EXEC command and pass the required parameters
+                         @Emp_ID = 1, 
+                         @Emp_Name = 'Alice Brown', 
+                         @Department = 'IT', 
+                         @Salary = 12000;
+```
+### 🔹 `Stored Procedure` to `DELETE` Records from 'EmpInfo' Table
+```sql 
+      CREATE PROCEDURE DeleteEmpInfo
+                                    @Emp_ID INT           -- Parameter to identify the employee
+      AS
+      BEGIN
+         DELETE FROM EmpInfo
+         WHERE Emp_ID = @Emp_ID;
+     END;
+```
+```sql
+      EXEC DeleteEmpInfo @Emp_ID = 1;                     -- Delete the employee with Emp_ID = 1
+```
+
+### 🔹 `Stored Procedure` to `DELETE` Records from 'EmpInfo' Table
 ```sql      
-      CREATE PROCEDURE StudentInfo
+      CREATE PROCEDURE EmployeeInfo
       AS                                  -- BEGIN and END are used to define the start and end of the executable block within a stored procedure,
       BEGIN                               -- allowing multiple SQL statements to be grouped together. 
-           SELECT * FROM Student;      
+           SELECT * FROM EmpInfo
+           WHERE Department = 'HR';      
       END;
-      GO                                  -- 'GO' is not an actual SQL command, It is a part of SSMS which indicates end of Batch (group of commands) in SSMS
+```
+### 🔹 Check Stored Procedure named `StudentInfo` from Student Table
+```sql      
+      EXEC EmployeeInfo;
 ```
 
 
@@ -1232,7 +1304,7 @@ Table: EXAMS
 ### 🔹 Repeat String like a `Loop`
 ```sql      
       PRINT 'This is a loop';
-      GO 5
+      GO 5                           -- 'GO' is not an actual SQL command, It is a part of SSMS which indicates end of Batch (group of commands) in SSMS
 /*
 OUTPUT:
 =======
