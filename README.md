@@ -1374,14 +1374,26 @@ Batch execution completed 4 times.
         NTILE(4) OVER (ORDER BY Marks_Obtained DESC) AS NTileGroup      -- If total 16 rows, NTILE(4) divides into groups of 4-4
 	FROM EXAMS;                                                     -- with rank 1-1 for 1st four, 2-2 for next four, 3-3 for again next four, and 4-4 for last four
 ```
-### 🔸 Display the `Second Rank` marks obtained using `DENSE_RANK`
+### 🔸 Display the `N-th Rank` marks obtained using `DENSE_RANK` with `CTE`
+- **`CTE`: A CTE (Common Table Expression) is a temporary table you create in a SQL query to make it easier to write and understand complex queries.**
 ```sql      
-       	With RankN AS (
-		        SELECT Adm_No, Marks_Obtained,
-			DENSE_RANK() OVER (ORDER BY Marks_Obtained DESC) AS [Rank Position]
-			FROM EXAMS
-		      )
+       	With CTE_RankNo AS (
+		             SELECT Adm_No, Marks_Obtained,
+			     DENSE_RANK() OVER (ORDER BY Marks_Obtained DESC) AS [Rank Position]
+			     FROM EXAMS
+		           )
 	Select *
-	From RankN
+	From RankNo
 	Where [Rank Position] = 2;                 -- Similarly can display 3rd, 4th,......nth RANK by DESC from TOP & ASC from BOTTOM
+```
+### 🔸 Delete DUPLICATE Records using `ROW_NUMBER` with `CTE`
+```sql      
+       With CTE_RemovDup AS (
+			     SELECT *,
+        		     ROW_NUMBER() OVER (PARTITION BY Adm_No, DOJ, Stud_Name 
+                              			ORDER BY Adm_No) AS DupRecord
+			     FROM STUDENT;
+		            )
+	DELETE FROM CTE_RemovDup
+	WHERE DupRecord > 1;
 ```
