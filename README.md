@@ -1296,36 +1296,127 @@ Batch execution completed 4 times.
 ```
   
 ### 🔹 `ABS()` : Returns the absolute (`Positive`) value of a number
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+	     						-- Inside the (), Can be used COLUMN Name of a Table
       SELECT ABS(-10) AS AbsoluteValue;             	-- Returns the absolute value of -10
 ```
 ### 🔹 `ROUND()` : Rounds a number to a specified number of decimal places
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+	      						-- Inside the (), Can be used COLUMN Name of a Table
       SELECT ROUND(12.3456, 2) AS RoundedValue;      	-- Rounds 12.3456 to 2 decimal places
 ```
 ### 🔹 `SQRT()` : Returns the square root of a number
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+	      						-- Inside the (), Can be used COLUMN Name of a Table
       SELECT SQRT(25) AS SquareRoot;      		-- Returns the square root of 25
 ```
 ### 🔹 `CEILING()` : Returns the smallest integer greater than or equal to a number
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+	      						-- Inside the (), Can be used COLUMN Name of a Table
       SELECT CEILING(4.3) AS CeilingValue;      	-- Returns the ceiling of 4.3 (next whole number, round up forwards)
 ```
 ### 🔹 `FLOOR()` : Returns the largest integer less than or equal to a number
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+	      						-- Inside the (), Can be used COLUMN Name of a Table
       SELECT FLOOR(4.7) AS FloorValue;      		-- Returns the floor of 4.7 (previous whole number, round up backwards)
 ```
 ### 🔹 `POWER()` : Raises a number to the power of another number
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+	      						-- Inside the (), Can be used COLUMN Name of a Table
       SELECT POWER(2, 3) AS PowerValue;      		-- Raises 2 to the power of 3 (2^3)
 ```
 ### 🔹 `EXP()` : Returns e raised to the power of a specified number
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+	      						-- Inside the (), Can be used COLUMN Name of a Table
       SELECT EXP(1) AS ExponentialValue;      		-- Returns e^1 (where e is Euler's number, approximately 2.718)
 ```
 ### 🔹 LOG() : Returns the natural logarithm (base e) of a number
-```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+```sql
+      							-- Inside the (), Can be used COLUMN Name of a Table
       SELECT LOG(10) AS LogarithmValue;      		-- Returns the natural logarithm of 10
+```
+
+# 🔘 ${\color{blue}DATE\ FUNCTIONS}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++-----------------------------------------------------------+
+| It is used to handle and manipulate date and time values. |
++-----------------------------------------------------------+
+```
+  
+### 🔹 `GETDATE()` : Returns the current date and time
+```sql
+      SELECT GETDATE() AS CurrentDateTime;
+```
+### 🔹 `YEAR()` : Extracts the year from a date
+```sql
+        SELECT YEAR(DOJ) AS YearOfJoining
+	FROM STUDENT;
+```
+### 🔹 `MONTH()` : Extracts the month from a date
+```sql
+        SELECT MONTH(DOJ) AS MonthOfJoining
+	FROM STUDENT;
+```
+### 🔹 `DAY()` : Extracts the day from a date
+```sql
+        SELECT DAY(DOJ) AS DayOfJoining
+	FROM STUDENT;
+```
+### 🔹 `DATEADD()` : Adds a specified time interval to a date
+```sql
+        SELECT Adm_No, DOJ, DATEADD(DAY, 5, DOJ) AS DOJPlus5Days     -- Adds 5 days to the 'DOJ' (Date of Joining) column
+	FROM STUDENT;
+```
+### 🔹 `DATEDIFF()` : Returns the difference between two dates in terms of a specified time interval
+```sql
+        SELECT Adm_No, DOJ, DATEDIFF(DAY, DOJ, GETDATE()) AS DaysSinceJoining     -- Returns the difference in days between 'DOJ' and the current date
+	FROM STUDENT;    
+```
+
+# 🔘 ${\color{blue}LOGICAL\ FUNCTIONS}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++------------------------------------------+
+| It is used to handle the missing values. |
++------------------------------------------+
+```
+  
+### 🔹 `ISNULL()` : Replaces NULL with a specified value `(with one Argument)`
+```sql
+      SELECT Adm_No, ISNULL(Monitor_ID, 'No Monitor') AS MonitorStatus          -- Replaces NULL in Monitor_ID with 'No Monitor'
+      FROM STUDENT;
+```
+### 🔹 `COALESCE()` : Returns the first non-null value from a list `(with multiple Arguments)`
+```sql
+      SELECT Adm_No, COALESCE(Guardian_Name, Monitor_ID, 'Not Available') AS FirstNonNullValue  
+      FROM STUDENT;                         -- Returns the first non-null value from Guardian_Name, Monitor_ID, or 'Not Available'
+```
+
+# 🔘 ${\color{blue}CONVERSION\ FUNCTIONS}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++-------------------------------------------------+
+| It is used to change data types of expressions. |
++-------------------------------------------------+
+```
+  
+### 🔹 `CAST()` : Converts one data type to another
+```sql
+      SELECT CAST('2024-09-24' AS DATE) AS ConvertedDate;                  -- This converts a string to a date type
+```
+### 🔹 `CONVERT()` : Similar to CAST(), but allows formatting options
+```sql
+      SELECT CONVERT(VARCHAR(10), GETDATE(), 101) AS FormattedDate;        -- This converts the current date to a string formatted as MM/DD/YYYY
+```
+### 🔹 `TRY_CAST()` : Attempts conversion; returns `NULL` if it fails
+```sql
+      SELECT TRY_CAST('123.45' AS INT) AS ConvertedValue;            -- This tries to convert a string to an integer. Since it can't be converted, it returns NULL
+```
+### 🔹 `TRY_CONVERT()` : Similar to TRY_CAST(), with formatting options
+```sql
+      SELECT TRY_CONVERT(VARCHAR(10), 'NotANumber') AS SafeConvert;
+					-- This attempts to convert a non-numeric string to a varchar. It returns NULL due to the failure in conversion
 ```
 
 
