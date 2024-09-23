@@ -499,7 +499,7 @@ Table: EXAMS
 ### 🔹 `Stored Procedure` to `INSERT` Records into 'EmpInfo' Table
 ```sql 
       CREATE PROCEDURE InsertEmpInfo
-					            @Emp_ID INT,               -- '@' symbol is used to declare variables or parameters in SQL Server
+				     @Emp_ID INT,               -- '@' symbol is used to declare variables or parameters in SQL Server
                                      @Emp_Name VARCHAR(50),
                                      @Department VARCHAR(50),
                                      @Salary INT
@@ -521,7 +521,7 @@ Table: EXAMS
 ### 🔹 `Stored Procedure` to `UPDATE` Records into 'EmpInfo' Table
 ```sql 
       CREATE PROCEDURE UpdateEmpInfo
-					            @Emp_ID INT,
+				     @Emp_ID INT,
                                      @Emp_Name VARCHAR(50),
                                      @Department VARCHAR(50),
                                      @Salary INT
