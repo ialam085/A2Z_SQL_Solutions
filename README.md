@@ -1367,3 +1367,14 @@ Batch execution completed 4 times.
         NTILE(4) OVER (ORDER BY Marks_Obtained DESC) AS NTileGroup      -- If total 16 rows, NTILE(4) divides into groups of 4-4
 	FROM EXAMS;                                                     -- with rank 1-1 for 1st four, 2-2 for next four, 3-3 for again next four, and 4-4 for last four
 ```
+### 🔸 Display the `Second Rank` marks obtained using `DENSE_RANK`
+```sql      
+       	With RankN AS (
+		        SELECT Adm_No, Marks_Obtained,
+			DENSE_RANK() OVER (ORDER BY Marks_Obtained DESC) AS [Rank Position]
+			FROM EXAMS
+		      )
+	Select *
+	From RankN
+	Where [Rank Position] = 2;                 -- Similarly can display 3rd, 4th,......nth RANK by DESC from TOP & ASC from BOTTOM
+```
