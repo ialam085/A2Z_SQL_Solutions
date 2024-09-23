@@ -1332,6 +1332,13 @@ Batch execution completed 4 times.
       GROUP BY Class
       HAVING COUNT(*) > 2;                   -- Find classes with more than 2 students
 ```
+### 🔸 Check DUPLICATE Records in a Table using `COUNT`
+```sql      
+      SELECT Adm_No, COUNT(*) as DuplicateCount
+      FROM STUDENT
+      GROUP BY Adm_No
+      HAVING COUNT(*) >= 2;                   -- Find classes with more than 2 students
+```
 
 
 # 🔘 ${\color{blue}RANKING\ FUNCTIONS}$
