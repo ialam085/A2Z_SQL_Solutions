@@ -1397,3 +1397,66 @@ Batch execution completed 4 times.
 	DELETE FROM CTE_RemovDup
 	WHERE DupRecord > 1;
 ```
+
+
+# 🔘 ${\color{blue}ANALYTIC\ FUNCTIONS}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++-------------------------------------------------------------------------------+
+| It is used to compute values across a set of rows related to the current row, |
+| enabling analysis without grouping the data. 			       		|                                
++-------------------------------------------------------------------------------+
+```
+```sql
+Table: EXAMS1
++----------+--------------+--------------+----------------+------------+
+|  Adm_No  | Subject_Code | Subject_Name | Marks_Obtained | Exam_Date  |
++----------+--------------+--------------+----------------+------------+
+| ROSE0001 |	SUB001	  |    Math	 |	85	  | 2023-01-10 |
+| ROSE0001 |	SUB002	  |   Science	 |	90	  | 2023-01-20 |
+| ROSE0001 |	SUB003	  |   English	 |	88	  | 2023-01-30 |
+| ROSE0002 |	SUB001	  |    Math	 |	78	  | 2023-01-10 |
+| ROSE0002 |	SUB002	  |   Science	 |	82	  | 2023-01-20 |
+| ROSE0002 |	SUB003	  |   English	 |	75	  | 2023-01-30 |
+| ROSE0003 |	SUB001	  |    Math	 |	92	  | 2023-01-10 |
+| ROSE0003 |	SUB002	  |   Science	 |	85	  | 2023-01-20 |
++----------+--------------+--------------+----------------+------------+
+```
+
+### 🔸 Using `CUME_DIST` Calculate the cumulative distribution of marks obtained
+```sql      
+       	SELECT Adm_No, Subject_Name, Marks_Obtained,
+        CUME_DIST() OVER (ORDER BY Marks_Obtained) AS CumulativeDistribution
+	FROM EXAMS1;
+```
+### 🔸 Using `PERCENT_RANK` Calculate the percent rank of each student's marks
+```sql      
+       	SELECT Adm_No, Subject_Name, Marks_Obtained,
+        PERCENT_RANK() OVER (ORDER BY Marks_Obtained) AS PercentRank
+	FROM EXAMS1;
+```
+### 🔸 Using `FIRST_VALUE` Get the first mark obtained for each student
+```sql      
+       	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
+        FIRST_VALUE(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date) AS FirstMark
+	FROM EXAMS1;
+```
+### 🔸 Using `LAST_VALUE` Get the last mark obtained for each student
+```sql      
+       	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
+        LAST_VALUE(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date 
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS LastMark
+	FROM EXAMS1;
+```
+### 🔸 Using `LAG` Get the previous mark obtained by each student
+```sql      
+       	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
+        LAG(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date) AS PreviousMark
+	FROM EXAMS1;
+```
+### 🔸 Using `LEAD` Get the next mark obtained by each student
+```sql      
+       	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
+        LEAD(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date) AS NextMark
+	FROM EXAMS;
+```
