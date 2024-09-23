@@ -1287,6 +1287,47 @@ Batch execution completed 4 times.
       FROM STUDENT;
 ```
 
+# 🔘 ${\color{blue}MATHEMATICAL\ FUNCTIONS}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++---------------------------------------------------------------------------------------------------------------------+
+| It is used to perform basic mathematical operations like Square root, Round, Power, Floor, Ceiling on numeric data. |
++---------------------------------------------------------------------------------------------------------------------+
+```
+  
+### 🔹 `ABS()` : Returns the absolute (`Positive`) value of a number
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT ABS(-10) AS AbsoluteValue;             	-- Returns the absolute value of -10
+```
+### 🔹 `ROUND()` : Rounds a number to a specified number of decimal places
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT ROUND(12.3456, 2) AS RoundedValue;      	-- Rounds 12.3456 to 2 decimal places
+```
+### 🔹 `SQRT()` : Returns the square root of a number
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT SQRT(25) AS SquareRoot;      		-- Returns the square root of 25
+```
+### 🔹 `CEILING()` : Returns the smallest integer greater than or equal to a number
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT CEILING(4.3) AS CeilingValue;      	-- Returns the ceiling of 4.3 (next whole number, round up forwards)
+```
+### 🔹 `FLOOR()` : Returns the largest integer less than or equal to a number
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT FLOOR(4.7) AS FloorValue;      		-- Returns the floor of 4.7 (previous whole number, round up backwards)
+```
+### 🔹 `POWER()` : Raises a number to the power of another number
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT POWER(2, 3) AS PowerValue;      		-- Raises 2 to the power of 3 (2^3)
+```
+### 🔹 `EXP()` : Returns e raised to the power of a specified number
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT EXP(1) AS ExponentialValue;      		-- Returns e^1 (where e is Euler's number, approximately 2.718)
+```
+### 🔹 LOG() : Returns the natural logarithm (base e) of a number
+```sql      						-- Inside the (), Can be used COLUMN Name of a Table
+      SELECT LOG(10) AS LogarithmValue;      		-- Returns the natural logarithm of 10
+```
+
 
 # 📗 WFL (`Windows Functions Library`)
 
@@ -1300,39 +1341,39 @@ Batch execution completed 4 times.
 +----------------------------------------------------------------------------------+
 ```
 
-### 🔸 Select Records using `COUNT`
+### 🔸 Select Records using `COUNT()`
 ```sql      
       SELECT COUNT(*) AS TotalStudents
       FROM STUDENT;                          -- Count the total number of records/rows from student table
 ```
-### 🔸 Select Records using `SUM`
+### 🔸 Select Records using `SUM()`
 ```sql      
       SELECT SUM(Fee) AS TotalFees
       FROM STUDENT;                          -- Calculate the total fees of all students from student table
 ```
-### 🔸 Select Records using `AVG`
+### 🔸 Select Records using `AVG()`
 ```sql      
       SELECT AVG(Fee) AS AverageFee
       FROM STUDENT;                          -- Calculate the average fee of students from student table
 ```
-### 🔸 Select Records using `MIN`
+### 🔸 Select Records using `MIN()`
 ```sql      
       SELECT MIN(Fee) AS MinimumFee
       FROM STUDENT;                          -- Find the minimum fee paid by a student from student table
 ```
-### 🔸 Select Records using `MAX`
+### 🔸 Select Records using `MAX()`
 ```sql      
       SELECT MAX(Fee) AS MinimumFee
       FROM STUDENT;                          -- Find the maximum fee paid by a student from student table
 ```
-### 🔸 Select Records using `COUNT` with GROUP BY and HAVING clauses
+### 🔸 Select Records using `COUNT()` with GROUP BY and HAVING clauses
 ```sql      
       SELECT Class, COUNT(*) AS NumberOfStudents
       FROM STUDENT
       GROUP BY Class
       HAVING COUNT(*) > 2;                   -- Find classes with more than 2 students
 ```
-### 🔸 Check DUPLICATE Records in a Table using `COUNT`
+### 🔸 Check DUPLICATE Records in a Table using `COUNT()`
 ```sql      
       SELECT Adm_No, COUNT(*) as DuplicateCount
       FROM STUDENT
@@ -1350,31 +1391,31 @@ Batch execution completed 4 times.
 +--------------------------------------------------------------------------------------+
 ```
 
-### 🔸 Assign a Rank to rows using `ROW_NUMBER`
+### 🔸 Assign a Rank to rows using `ROW_NUMBER()`
 ```sql      
        	SELECT Adm_No, Marks_Obtained,
         ROW_NUMBER() OVER (ORDER BY Marks_Obtained DESC) AS RowNum
 	FROM EXAMS;
 ```
-### 🔸 Assign a Rank to rows using `DENSE_RANK` with no gaps even if any `TIES`
+### 🔸 Assign a Rank to rows using `DENSE_RANK()` with no gaps even if any `TIES`
 ```sql      
        	SELECT Adm_No, Marks_Obtained,
         DENSE_RANK() OVER (ORDER BY Marks_Obtained DESC) AS DenseRank
 	FROM EXAMS;
 ```
-### 🔸 Assign a Rank to rows using `RANK` with gaps if any `TIES`
+### 🔸 Assign a Rank to rows using `RANK()` with gaps if any `TIES`
 ```sql      
        	SELECT Adm_No, Marks_Obtained,
         RANK() OVER (ORDER BY Marks_Obtained DESC) AS Rank
 	FROM EXAMS;
 ```
-### 🔸 Divide rows using `NTILE` into bucket of Grouped Sequence
+### 🔸 Divide rows using `NTILE()` into bucket of Grouped Sequence
 ```sql      
        	SELECT Adm_No, Marks_Obtained,
         NTILE(4) OVER (ORDER BY Marks_Obtained DESC) AS NTileGroup      -- If total 16 rows, NTILE(4) divides into groups of 4-4
 	FROM EXAMS;                                                     -- with rank 1-1 for 1st four, 2-2 for next four, 3-3 for again next four, and 4-4 for last four
 ```
-### 🔸 Display the `N-th Rank` marks obtained using `DENSE_RANK` with `CTE`
+### 🔸 Display the `N-th Rank` marks obtained using `DENSE_RANK()` with `CTE`
 - **`CTE`: A CTE (Common Table Expression) is a temporary table you create in a SQL query to make it easier to write and understand complex queries.**
 ```sql      
        	With CTE_RankNo AS (
@@ -1386,7 +1427,7 @@ Batch execution completed 4 times.
 	From RankNo
 	Where [Rank Position] = 2;                 -- Similarly can display 3rd, 4th,......nth RANK by DESC from TOP & ASC from BOTTOM
 ```
-### 🔸 Delete DUPLICATE Records using `ROW_NUMBER` with `CTE`
+### 🔸 Delete DUPLICATE Records using `ROW_NUMBER()` with `CTE`
 ```sql      
        With CTE_RemovDup AS (
 			     SELECT *,
@@ -1423,38 +1464,38 @@ Table: EXAMS1
 +----------+--------------+--------------+----------------+------------+
 ```
 
-### 🔸 Using `CUME_DIST` Calculate the cumulative distribution of marks obtained
+### 🔸 Using `CUME_DIST()` Calculate the cumulative distribution of marks obtained
 ```sql      
        	SELECT Adm_No, Subject_Name, Marks_Obtained,
         CUME_DIST() OVER (ORDER BY Marks_Obtained) AS CumulativeDistribution
 	FROM EXAMS1;
 ```
-### 🔸 Using `PERCENT_RANK` Calculate the percent rank of each student's marks
+### 🔸 Using `PERCENT_RANK()` Calculate the percent rank of each student's marks
 ```sql      
        	SELECT Adm_No, Subject_Name, Marks_Obtained,
         PERCENT_RANK() OVER (ORDER BY Marks_Obtained) AS PercentRank
 	FROM EXAMS1;
 ```
-### 🔸 Using `FIRST_VALUE` Get the first mark obtained for each student
+### 🔸 Using `FIRST_VALUE()` Get the first mark obtained for each student
 ```sql      
        	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
         FIRST_VALUE(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date) AS FirstMark
 	FROM EXAMS1;
 ```
-### 🔸 Using `LAST_VALUE` Get the last mark obtained for each student
+### 🔸 Using `LAST_VALUE()` Get the last mark obtained for each student
 ```sql      
        	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
         LAST_VALUE(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date 
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS LastMark
 	FROM EXAMS1;
 ```
-### 🔸 Using `LAG` Get the previous mark obtained by each student
+### 🔸 Using `LAG()` Get the previous mark obtained by each student
 ```sql      
        	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
         LAG(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date) AS PreviousMark
 	FROM EXAMS1;
 ```
-### 🔸 Using `LEAD` Get the next mark obtained by each student
+### 🔸 Using `LEAD()` Get the next mark obtained by each student
 ```sql      
        	SELECT Adm_No, Subject_Name, Marks_Obtained, Exam_Date,
         LEAD(Marks_Obtained) OVER (PARTITION BY Adm_No ORDER BY Exam_Date) AS NextMark
