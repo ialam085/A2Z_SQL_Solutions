@@ -1229,6 +1229,22 @@ Table: EXAMS
       SELECT REPLICATE(Stud_Name, 2) AS DoubledName          -- Return the same Student Name 2 times
       FROM STUDENT;
 ```
+### 🔹 Repeat String like a `Loop`
+```sql      
+      PRINT 'This is a loop';
+      GO 5
+/*
+OUTPUT:
+=======
+Beginning execution loop
+This is a loop
+This is a loop
+This is a loop
+This is a loop
+This is a loop
+Batch execution completed 4 times.
+*/
+```
   
 ### 🔸 Format Contact_Number with `dashes`
 ```sql      
