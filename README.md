@@ -790,49 +790,6 @@ Table: EXAMS
 ```
 
 
-# 🔘 ${\color{blue}AGGREGATE\ FUNCTIONS}$
-🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
-```diff
-+----------------------------------------------------------------------------------+
-| It is used to perform a calculation on multiple rows and returns a single value. |
-| It is commonly used to summarize or analyze data.                                |
-+----------------------------------------------------------------------------------+
-```
-
-### 🔸 Select Records using `COUNT`
-```sql      
-      SELECT COUNT(*) AS TotalStudents
-      FROM STUDENT;                          -- Count the total number of records/rows from student table
-```
-### 🔸 Select Records using `SUM`
-```sql      
-      SELECT SUM(Fee) AS TotalFees
-      FROM STUDENT;                          -- Calculate the total fees of all students from student table
-```
-### 🔸 Select Records using `AVG`
-```sql      
-      SELECT AVG(Fee) AS AverageFee
-      FROM STUDENT;                          -- Calculate the average fee of students from student table
-```
-### 🔸 Select Records using `MIN`
-```sql      
-      SELECT MIN(Fee) AS MinimumFee
-      FROM STUDENT;                          -- Find the minimum fee paid by a student from student table
-```
-### 🔸 Select Records using `MAX`
-```sql      
-      SELECT MAX(Fee) AS MinimumFee
-      FROM STUDENT;                          -- Find the maximum fee paid by a student from student table
-```
-### 🔸 Select Records using `COUNT` with GROUP BY and HAVING clauses
-```sql      
-      SELECT Class, COUNT(*) AS NumberOfStudents
-      FROM STUDENT
-      GROUP BY Class
-      HAVING COUNT(*) > 2;                   -- Find classes with more than 2 students
-```
-
-
 # 🔘 ${\color{blue}CLAUSES}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
 ```diff
@@ -1328,4 +1285,85 @@ Batch execution completed 4 times.
 ```sql      
       SELECT FORMAT(DOJ, 'MM/dd/yyyy') AS FormattedDOJ
       FROM STUDENT;
+```
+
+
+# 📗 WFL (`Windows Functions Library`)
+
+
+# 🔘 ${\color{blue}AGGREGATE\ FUNCTIONS}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++----------------------------------------------------------------------------------+
+| It is used to perform a calculation on Set of Values and return a single value. |
+| It is commonly used to summarize or analyze data.                                |
++----------------------------------------------------------------------------------+
+```
+
+### 🔸 Select Records using `COUNT`
+```sql      
+      SELECT COUNT(*) AS TotalStudents
+      FROM STUDENT;                          -- Count the total number of records/rows from student table
+```
+### 🔸 Select Records using `SUM`
+```sql      
+      SELECT SUM(Fee) AS TotalFees
+      FROM STUDENT;                          -- Calculate the total fees of all students from student table
+```
+### 🔸 Select Records using `AVG`
+```sql      
+      SELECT AVG(Fee) AS AverageFee
+      FROM STUDENT;                          -- Calculate the average fee of students from student table
+```
+### 🔸 Select Records using `MIN`
+```sql      
+      SELECT MIN(Fee) AS MinimumFee
+      FROM STUDENT;                          -- Find the minimum fee paid by a student from student table
+```
+### 🔸 Select Records using `MAX`
+```sql      
+      SELECT MAX(Fee) AS MinimumFee
+      FROM STUDENT;                          -- Find the maximum fee paid by a student from student table
+```
+### 🔸 Select Records using `COUNT` with GROUP BY and HAVING clauses
+```sql      
+      SELECT Class, COUNT(*) AS NumberOfStudents
+      FROM STUDENT
+      GROUP BY Class
+      HAVING COUNT(*) > 2;                   -- Find classes with more than 2 students
+```
+
+
+# 🔘 ${\color{blue}RANKING\ FUNCTIONS}$
+🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
+```diff
++--------------------------------------------------------------------------------------+
+| It’s commonly used for ranking results, Assigns a unique sequential integer to rows, |
+| such as determining the top or bottom records in a dataset. 			       |                                
++--------------------------------------------------------------------------------------+
+```
+
+### 🔸 Assign a Rank to rows using `ROW_NUMBER`
+```sql      
+       	SELECT Adm_No, Marks_Obtained,
+        ROW_NUMBER() OVER (ORDER BY Marks_Obtained DESC) AS RowNum
+	FROM EXAMS;
+```
+### 🔸 Assign a Rank to rows using `DENSE_RANK` with no gaps even if any `TIES`
+```sql      
+       	SELECT Adm_No, Marks_Obtained,
+        DENSE_RANK() OVER (ORDER BY Marks_Obtained DESC) AS DenseRank
+	FROM EXAMS;
+```
+### 🔸 Assign a Rank to rows using `RANK` with gaps if any `TIES`
+```sql      
+       	SELECT Adm_No, Marks_Obtained,
+        RANK() OVER (ORDER BY Marks_Obtained DESC) AS Rank
+	FROM EXAMS;
+```
+### 🔸 Divide rows using `NTILE` into bucket of Grouped Sequence
+```sql      
+       	SELECT Adm_No, Marks_Obtained,
+        NTILE(4) OVER (ORDER BY Marks_Obtained DESC) AS NTileGroup      -- If total 16 rows, NTILE(4) divides into groups of 4-4
+	FROM EXAMS;                                                     -- with rank 1-1 for 1st four, 2-2 for next four, 3-3 for again next four, and 4-4 for last four
 ```
