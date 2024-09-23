@@ -555,7 +555,7 @@ Table: EXAMS
       EXEC DeleteEmpInfo @Emp_ID = 1;                     -- Delete the employee with Emp_ID = 1
 ```
 
-### 🔹 `Stored Procedure` to `DELETE` Records from 'EmpInfo' Table
+### 🔹 `Stored Procedure` to `SELECT` Records from 'EmpInfo' Table
 ```sql      
       CREATE PROCEDURE EmployeeInfo
       AS                                  -- BEGIN and END are used to define the start and end of the executable block within a stored procedure,
@@ -564,7 +564,7 @@ Table: EXAMS
            WHERE Department = 'HR';      
       END;
 ```
-### 🔹 Check Stored Procedure named `StudentInfo` from Student Table
+### 🔹 Check Stored Procedure named `EmployeeInfo` from 'EmpInfo' Table
 ```sql      
       EXEC EmployeeInfo;
 ```
