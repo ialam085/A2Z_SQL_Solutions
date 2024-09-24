@@ -695,6 +695,17 @@ Table: EXAMS
 ```sql      
       EXEC EmployeeInfo;
 ```
+### 🔹 `Stored Procedure` using a `TRIGGER`
+- **`TRIGGER`: It is a special kind of stored procedure that automatically executes (or "fires") in response to specific events on a table, such as INSERT, UPDATE, or DELETE operations which helps in automate the tasks.**
+```sql      
+        CREATE TRIGGER trg_AfterInsert
+	AFTER INSERT ON Employee
+	FOR EACH ROW
+	BEGIN
+    		INSERT INTO Employee_Audit (Emp_ID, Change_Type, Change_Date)
+    		                    VALUES (NEW.Emp_ID, 'INSERT', NOW());
+	END;
+```
 
 
 # 📗 DQL (`Data Query Language`)
