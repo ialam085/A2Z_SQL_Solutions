@@ -383,7 +383,15 @@ Table: EXAMS
       ('ROSE00172', '2021-12-04', 'Md Azfar', 'M', 'Md Mushtaque', 'Maghota', '7631041561', 10, 300),
       ('ROSE00331', '2023-02-03', 'Juveria Khatoon', 'F', 'Saud Alam', 'Chihar', '7330859950', 8, 300);
 ```
-
+### 🔹 Insert and COPY complete Data/Values from Old Source Table `Student_Old` into a New Destination Table `Student` with `Same Columns`
+- **`Data Warehousing`: It is the process of storing and managing large volumes of data from multiple sources for analysis and reporting.**
+- **`ETL`: The process of combining data from multiple sources into a data warehouse is called extract, transform, and load (ETL).**
+- **`Data Mining`: Discovering patterns, trends, and useful information from large datasets stored in a database like `Aggregation`, or other `calculations`.**
+```sql      
+      INSERT INTO STUDENT (Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee)
+		   SELECT Adm_No, DOJ, Stud_Name, Gender, Guardian_Name, Address, Contact_Number, Class, Fee
+      FROM Student_Old;
+```
 
 # 🔘 ${\color{blue}UPDATE}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
