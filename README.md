@@ -250,7 +250,126 @@ Table: EXAMS
 - **Without an Index (_Left side_)**: SQL Server `searches the whole table` (**slow**).
 - **With an Index (_Right side_)**: SQL Server `jumps directly to the rows` you're looking for (**fast**).
 
+### 🔸 Create Tables under `NORMALIZATION`
+- **`NORMALIZATION`: The process of organizing data to reduce complexity and improve data integrity.**
 
+- **`1st Normal Form (1NF)`**: Eliminate repeating groups.
+- **`Before 1NF`**
+```sql
+      					-- Original table with multiple phone numbers in one row
+	CREATE TABLE StudentInfo (
+				   Adm_No VARCHAR(10),
+    				   Stud_Name VARCHAR(50),
+    				   Phone_Number VARCHAR(100)      -- Comma-separated values
+				 );
+
+					-- Inserting a record with multiple phone numbers
+	INSERT INTO StudentInfo (Adm_No, Stud_Name, Phone_Number)
+	                 VALUES ('ROSE00023', 'Abu Talha', '7903077297, 9823099999');
+```
+- **`After 1NF`**
+```sql
+      					-- Creating a normalized table
+	CREATE TABLE StudentInfo_1NF (
+                                        Adm_No VARCHAR(10),
+    					Stud_Name VARCHAR(50),
+    					Phone_Number VARCHAR(15)
+				     );
+
+					-- Insert each phone number as a separate row
+	INSERT INTO StudentInfo_1NF (Adm_No, Stud_Name, Phone_Number)
+	VALUES ('ROSE00023', 'Abu Talha', '7903077297'),
+	       ('ROSE00023', 'Abu Talha', '9823099999');
+```
+- **`2nd Normal Form (2NF)`**: Remove partial dependencies (Non-prime attributes depend on the whole primary key).
+- **`Before 2NF`**
+```sql
+				-- Assume a student’s address and class information depend on both the Adm_No and the Class, which violates 2NF
+      						-- Original table with partial dependency
+	CREATE TABLE StudentInfo_2NF (
+    					Adm_No VARCHAR(10),
+    					Class VARCHAR(10),
+    					Stud_Name VARCHAR(50),
+    					Address VARCHAR(50)
+				     );
+
+						-- Inserting data
+	INSERT INTO StudentInfo_2NF (Adm_No, Class, Stud_Name, Address)
+	                     VALUES ('ROSE00023', '10', 'Abu Talha', 'Delhi');
+```
+- **`After 2NF`**
+```sql
+			-- Create separate tables for Student and Class
+      						-- Student table (Adm_No is the primary key)
+	CREATE TABLE Student (
+    				Adm_No VARCHAR(10),
+    				Stud_Name VARCHAR(50),
+    				Address VARCHAR(50)
+			     );
+
+						-- Class table (Separate the class info)
+	CREATE TABLE ClassInfo (
+    				Adm_No VARCHAR(10),
+    				Class VARCHAR(10)
+			       );
+
+						-- Insert into the Student table
+	INSERT INTO Student (Adm_No, Stud_Name, Address)
+	             VALUES ('ROSE00023', 'Abu Talha', 'Delhi');
+
+						-- Insert into the ClassInfo table
+	INSERT INTO ClassInfo (Adm_No, Class)
+	               VALUES ('ROSE00023', '10');
+```
+- **`3rd Normal Form (3NF)`**: Remove transitive dependencies (Non-prime attributes depend on non-prime attributes).
+- **`Before 3NF`**
+```sql
+		-- Assume the Guardian_Name and Contact_Number depend on the student’s Adm_No, but the Contact_Number is dependent on the Guardian_Name, violating 3NF
+      						-- Original table with transitive dependency
+	CREATE TABLE StudentGuardianInfo (
+					   Adm_No VARCHAR(10),
+    					   Stud_Name VARCHAR(50),
+    					   Guardian_Name VARCHAR(50),
+    					   Contact_Number VARCHAR(15)
+					 );
+
+						-- Inserting data
+	INSERT INTO StudentGuardianInfo (Adm_No, Stud_Name, Guardian_Name, Contact_Number)
+	                         VALUES ('ROSE00023', 'Abu Talha', 'Md Fareed', '7903077297');
+```
+- **`After 3NF`**
+```sql
+			-- Create a separate table for Guardian to remove the transitive dependency
+      					-- Student table (Adm_No is the primary key)
+	CREATE TABLE Student (
+    				Adm_No VARCHAR(10),
+    				Stud_Name VARCHAR(50)
+			     );
+
+					-- Guardian table (Guardian_Name is the primary key)
+	CREATE TABLE Guardian (
+    				Guardian_Name VARCHAR(50),
+    				Contact_Number VARCHAR(15)
+			      );
+
+					-- StudentGuardianInfo table to link students to their guardians
+	CREATE TABLE StudentGuardianInfo (
+					   Adm_No VARCHAR(10),
+    					   Guardian_Name VARCHAR(50)
+					 );
+
+					-- Insert into the Student table
+	INSERT INTO Student (Adm_No, Stud_Name)
+	             VALUES ('ROSE00023', 'Abu Talha');
+
+					-- Insert into the Guardian table
+	INSERT INTO Guardian (Guardian_Name, Contact_Number)
+	              VALUES ('Md Fareed', '7903077297');
+
+					-- Insert into the StudentGuardianInfo table
+	INSERT INTO StudentGuardianInfo (Adm_No, Guardian_Name)
+	                         VALUES ('ROSE00023', 'Md Fareed');
+```
 
 # 🔘 ${\color{blue}ALTER}$
 🏠 [Home](https://github.com/ialam085/SQL_Server_Practice_All_Queries/blob/main/README.md#-colorblueclick-the-links-below-to-navigate-directly-to-the-desired-colorredsql-commands)
