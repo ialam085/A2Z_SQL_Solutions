@@ -70,7 +70,7 @@
 
 - **${\color{red}TCL}$** `(Transaction Control Language)`: _TCL commands can only use with DML commands like INSERT, DELETE and UPDATE only._
 
-   - EGIN TRANSACTION
+   - BEGIN TRANSACTION
    - COMMIT
    - ROLLBACK
    - SAVEPOINT
