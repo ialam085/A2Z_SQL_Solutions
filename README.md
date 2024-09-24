@@ -980,12 +980,42 @@ Table: EXAMS
 ```
 
 ### 🔸 Fetch Student Records using `UNION`
-- **`UNION`: It Combines the results of two or more SELECT statements. The UNION operator only returns distinct records from one or more tables.**
+- **`UNION`: It Combines the results of two or more SELECT statements. The UNION operator only returns DISTINCT records from one or more tables. It is useful when both the select statement have same number of columns and same kind of data types, either from one table or from two tables**
 ```sql
       SELECT Adm_No FROM STUDENT
       UNION
-      SELECT Guardian_Name FROM STUDENT;
+      SELECT Monitor_ID FROM STUDENT;   	-- Return the DISTINCT values combination from 'Adm_No' and 'Monitor_ID' from same table
 ```
+```sql
+      SELECT Adm_No FROM STUDENT
+      UNION
+      SELECT Adm_No FROM EXAMS;   		-- Return the DISTINCT values combination from 'Adm_No' from two tables
+```
+### 🔸 Fetch Student Records using `UNION ALL`
+- **`UNION ALL`: It Combines the results of two or more SELECT statements. The UNION ALL operator returns Selected values including DUPLICATES from one or more tables. It is useful when both the select statement have same number of columns and same kind of data types, either from one table or from two tables**
+```sql
+      SELECT Adm_No FROM STUDENT
+      UNION ALL
+      SELECT Monitor_ID FROM STUDENT;   	-- Return ALL values including DUPLICATES combination from 'Adm_No' and 'Monitor_ID' from same table
+```
+```sql
+      SELECT Adm_No FROM STUDENT
+      UNION ALL
+      SELECT Adm_No FROM EXAMS;   		-- Return ALL values including DUPLICATES combination from 'Adm_No' from two tables
+```
+### 🔸 Fetch Student Records using `INTERSECT`
+- **`INTERSECT`: It Combines the results of two or more SELECT statements. The INTERSECT operator returns only COMMON values from one or more tables. It is useful when both the select statement have same number of columns and same kind of data types, either from one table or from two tables**
+```sql
+      SELECT Adm_No FROM STUDENT
+      INTERSECT
+      SELECT Monitor_ID FROM STUDENT;   	-- Return COMMON values from 'Adm_No' and 'Monitor_ID' from same table
+```
+```sql
+      SELECT Adm_No FROM STUDENT
+      INTERSECT
+      SELECT Adm_No FROM EXAMS;   		-- Return COMMON values from 'Adm_No' from two tables
+```
+
 
 # 📗 DCL (`Data Control Language`)
 
