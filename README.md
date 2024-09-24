@@ -960,16 +960,6 @@ Table: EXAMS
       FULL JOIN EXAMS E
       ON S.Adm_No = E.Adm_No;           --  FULL JOIN acts as similar to FULL OUTER JOIN
 ```
-
-### 🔸 Fetch Student Records using `SELF JOIN`
-- **`SELF JOIN`: A self join is when a table is joined with itself. It is useful for hierarchical or recursive data structures. Let's say we want to find students from the same address (students who live in the same location).**
-```sql
-      SELECT S1.Stud_Name AS Student1, S2.Stud_Name AS Student2, S1.Addres
-      FROM STUDENT S1
-      INNER JOIN STUDENT S2
-      ON S1.Addres = S2.Addres
-      WHERE S1.Adm_No <> S2.Adm_No;    -- This query matches students who live at the same address but ensures they are not the same student by using S1.Adm_No <> S2.Adm_No
-```
   
 ### 🔸 Fetch Student Records using `CROSS JOIN`
 - **`CROSS JOIN`: It combines every row of the first table with every row of the second table. `Example`: Cross join students with their subjects.**
@@ -977,6 +967,63 @@ Table: EXAMS
       SELECT S.Stud_Name, E.Subject_Name
       FROM STUDENT S
       CROSS JOIN EXAMS E;              -- Pairs every student with every subject, producing a large set of combinations
+```
+
+### 🔸 Fetch Student Records using `SELF JOIN`
+- **`SELF JOIN`: A self join is when a table is joined with itself. It is useful for hierarchical or recursive data structures.**
+```sql
+				    -- Find Students with the Same Guardian
+      SELECT 
+	    A.Stud_Name AS Student1, 
+	    B.Stud_Name AS Student2, 
+    	    A.Guardian_Name
+      FROM 
+	    STUDENT A
+      JOIN 
+            STUDENT B 
+      ON 
+    	    A.Guardian_Name = B.Guardian_Name 
+    	    AND A.Stud_Name < B.Stud_Name;
+```
+```sql
+				    -- Find Students and Their Monitor
+      SELECT 
+	    A.Stud_Name AS Student, 
+    	    B.Stud_Name AS Monitor
+      FROM 
+	    STUDENT A
+      JOIN 
+            STUDENT B 
+      ON 
+    	    A.Monitor_ID = B.Adm_No;
+```
+```sql
+				    -- Find Students in the Same Class
+      SELECT 
+	    A.Stud_Name as Student1, 
+    	    B.Stud_Name as Student2,
+	    A.Class
+      FROM 
+	    STUDENT A
+      JOIN 
+            STUDENT B 
+      ON 
+    	    A.Class = B.Class
+	    AND A.Stud_Name < B.Stud_Name;
+```
+```sql
+				    -- Find Students with the Same Address
+      SELECT 
+	    A.Stud_Name as Student1, 
+    	    B.Stud_Name as Student2,
+	    A.Addres
+      FROM 
+	    STUDENT A
+      JOIN 
+            STUDENT B 
+      ON 
+    	    A.Addres = B.Addres
+	    AND A.Stud_Name < B.Stud_Name;
 ```
 
 ### 🔸 Fetch Student Records using `UNION`
