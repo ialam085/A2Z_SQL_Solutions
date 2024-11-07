@@ -745,6 +745,11 @@ Table: EXAMS
 ```sql      
       SELECT * FROM sys.databases;
 ```
+### 🔸 Copy a Table from Old Database to New Database
+```sql      
+      USE NewDB;
+      SELECT * INTO NewDB.dbo.Student FROM OldDB.dbo.Student;
+```
 ### 🔸 Select `All Tables` from a current session Database
 ```sql      
       SELECT * FROM sys.tables;
